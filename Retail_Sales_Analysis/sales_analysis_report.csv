@@ -1,0 +1,13 @@
+customer_id,customer_name,city,age,gender,order_id,product_id,order_date,quantity,sales_channel,product_name,category,price,total_amount,month
+C001,Rahul Sharma,Patna,32,Male,O001,P002,2026-01-10,2,Online,Mobile Phone,Electronics,25000.0,50000.0,2026-01
+C001,Rahul Sharma,Patna,32,Male,O006,P004,2026-03-08,2,Online,Headphones,Electronics,3000.0,6000.0,2026-03
+C002,Priya Singh,Delhi,28,Female,O002,P001,2026-01-15,1,Offline,Laptop,Electronics,55000.0,55000.0,2026-01
+C002,Priya Singh,Delhi,28,Female,O012,P004,2026-05-15,4,Online,Headphones,Electronics,3000.0,12000.0,2026-05
+C003,Amit Kumar,Kolkata,35,Male,O003,P004,2026-02-05,3,Online,Headphones,Electronics,3000.0,9000.0,2026-02
+C003,Amit Kumar,Kolkata,35,Male,O010,P002,2026-04-22,1,Offline,Mobile Phone,Electronics,25000.0,25000.0,2026-04
+C004,Sneha Verma,Pune,30,Female,O004,P003,2026-02-12,2,Offline,Office Chair,Furniture,7000.0,14000.0,2026-02
+C005,Rohit Raj,Patna,40,Male,O005,P006,2026-03-01,4,Online,Shoes,Fashion,4000.0,16000.0,2026-03
+C005,Rohit Raj,Patna,40,Male,O011,P003,2026-05-05,1,Offline,Office Chair,Furniture,7000.0,7000.0,2026-05
+C006,Neha Gupta,Delhi,26,Female,O007,P005,2026-03-18,1,Offline,Study Table,Furniture,12000.0,12000.0,2026-03
+C007,Ankit Sinha,Mumbai,38,Male,O008,P001,2026-04-02,1,Online,Laptop,Electronics,55000.0,55000.0,2026-04
+C008,Riya Das,Kolkata,24,Female,O009,P007,2026-04-10,5,Online,Backpack,Fashion,2500.0,12500.0,2026-04
