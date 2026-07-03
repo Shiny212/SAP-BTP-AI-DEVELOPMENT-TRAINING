@@ -1,0 +1,11 @@
+# Python virtual environments
+venv/
+Student_Performance_Management_System/venv/
+
+# Python cache
+__pycache__/
+*.py[cod]
+
+# VS Code settings
+.vscode/
+Day_2/.vscode/

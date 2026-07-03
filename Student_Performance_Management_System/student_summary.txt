@@ -1,0 +1,8 @@
+Student Performance Summary
+---------------------------
+Total Students: 10
+Average Marks: 76.8
+Highest Marks: 95
+Lowest Marks: 39
+Passed Students: 9
+Failed Students: 1
