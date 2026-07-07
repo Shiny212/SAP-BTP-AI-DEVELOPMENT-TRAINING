@@ -21,39 +21,47 @@ from sklearn.metrics import (
     roc_auc_score,
     classification_report,
     confusion_matrix,
-    ConfusionMatrixDisplay
+    ConfusionMatrixDisplay,
+    RocCurveDisplay
 )
 
-# Load dataset
+# ==========================
+# Load Dataset
+# ==========================
+
 df = pd.read_csv("dataset/loan_default_dataset.csv")
 
 # Features and Target
 X = df.drop("Loan_Default", axis=1)
 y = df["Loan_Default"]
 
-# Numerical and Categorical columns
+# Numerical and Categorical Columns
 numerical_columns = X.select_dtypes(include=["int64", "float64"]).columns
 categorical_columns = X.select_dtypes(include=["object"]).columns
 
-# Numerical Pipeline
+# ==========================
+# Preprocessing
+# ==========================
+
 numerical_pipeline = Pipeline([
     ("imputer", SimpleImputer(strategy="median")),
     ("scaler", StandardScaler())
 ])
 
-# Categorical Pipeline
 categorical_pipeline = Pipeline([
     ("imputer", SimpleImputer(strategy="most_frequent")),
     ("encoder", OneHotEncoder(handle_unknown="ignore"))
 ])
 
-# Column Transformer
 preprocessor = ColumnTransformer([
     ("num", numerical_pipeline, numerical_columns),
     ("cat", categorical_pipeline, categorical_columns)
 ])
 
+# ==========================
 # Train Test Split
+# ==========================
+
 X_train, X_test, y_train, y_test = train_test_split(
     X,
     y,
@@ -62,7 +70,10 @@ X_train, X_test, y_train, y_test = train_test_split(
     random_state=42
 )
 
+# ==========================
 # Models
+# ==========================
+
 models = {
     "Dummy Classifier": DummyClassifier(strategy="most_frequent"),
     "Logistic Regression": LogisticRegression(max_iter=1000),
@@ -72,6 +83,10 @@ models = {
 }
 
 results = []
+
+# ==========================
+# Train and Evaluate
+# ==========================
 
 for name, model in models.items():
 
@@ -106,7 +121,10 @@ for name, model in models.items():
 
     print(classification_report(y_test, y_pred))
 
+    # ==========================
     # Confusion Matrix
+    # ==========================
+
     cm = confusion_matrix(y_test, y_pred)
 
     disp = ConfusionMatrixDisplay(
@@ -114,13 +132,44 @@ for name, model in models.items():
         display_labels=["Safe", "Default"]
     )
 
-    disp.plot()
+    disp.plot(cmap="Blues")
 
-    plt.title(name)
+    plt.title(f"Confusion Matrix - {name}")
 
     plt.show()
 
-# Comparison Table
+    # ==========================
+    # ROC Curve (Only Random Forest)
+    # ==========================
+
+    if name == "Random Forest":
+
+        plt.figure(figsize=(8,6))
+
+        RocCurveDisplay.from_estimator(
+            pipeline,
+            X_test,
+            y_test
+        )
+
+        plt.plot(
+            [0,1],
+            [0,1],
+            linestyle="--",
+            color="red",
+            label="Random Guess"
+        )
+
+        plt.title("ROC Curve - Random Forest")
+
+        plt.legend()
+
+        plt.show()
+
+# ==========================
+# Model Comparison
+# ==========================
+
 comparison = pd.DataFrame(
     results,
     columns=[
@@ -133,12 +182,22 @@ comparison = pd.DataFrame(
     ]
 )
 
-print("\nModel Comparison")
+print("\n==============================")
+print("Model Comparison")
+print("==============================")
+
 print(comparison)
+
+# ==========================
+# Best Model
+# ==========================
 
 best_model = comparison.loc[
     comparison["ROC-AUC"].idxmax()
 ]
 
-print("\nBest Model Based on ROC-AUC")
+print("\n==============================")
+print("Best Model Based on ROC-AUC")
+print("==============================")
+
 print(best_model)
