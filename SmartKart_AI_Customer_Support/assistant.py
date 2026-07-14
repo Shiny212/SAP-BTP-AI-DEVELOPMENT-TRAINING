@@ -1,7 +1,7 @@
 """
 assistant.py
 
-Interactive SmartKart AI Customer Support Assistant.
+SmartKart AI Customer Support Assistant
 """
 
 from prompts import (
@@ -17,66 +17,68 @@ from tool_executor import (
 
 
 class SmartKartAssistant:
-    """
-    SmartKart AI Customer Support Assistant.
-    """
 
     def __init__(self):
 
-        self.version = "1.0.0"
+        self.version = "2.0.0"
 
-        print("✓ SmartKart Assistant Initialized Successfully.\n")
+        print("✓ SmartKart AI Assistant Initialized Successfully.\n")
 
-    # --------------------------------------------------
-    # Display Header
-    # --------------------------------------------------
+    # -------------------------------------------------
 
     def show_header(self):
 
         print("=" * 70)
-        print("               SmartKart AI Customer Support")
+        print("            SmartKart AI Customer Support")
         print("=" * 70)
 
-        print(f"Version    : {self.version}")
-        print("Powered By : LangChain + Gemini")
+        print(f"Version : {self.version}")
+        print("Powered By : Gemini 3.1 Flash Lite")
+        print("Features :")
+        print("✓ Tool Calling")
+        print("✓ Pydantic")
+        print("✓ Route Selection")
+        print("✓ RAG")
+        print("✓ FAISS")
+        print("✓ Conversation Memory")
+
         print("-" * 70)
 
-    # --------------------------------------------------
-    # Display Welcome Message
-    # --------------------------------------------------
+    # -------------------------------------------------
 
     def show_welcome(self):
 
         print(WELCOME_PROMPT)
 
-        print("\nAvailable Commands")
+        print("\nCommands")
         print("-" * 30)
-        print("history  -> Show conversation history")
-        print("clear    -> Clear conversation history")
-        print("help     -> Show available commands")
-        print("exit     -> Exit application")
-
+        print("history")
+        print("clear")
+        print("help")
+        print("exit")
         print("-" * 70)
 
-    # --------------------------------------------------
-    # Display Help
-    # --------------------------------------------------
+    # -------------------------------------------------
 
     def show_help(self):
 
-        print("\nAvailable Commands")
-        print("-" * 30)
+        print("\nExample Questions\n")
 
-        print("history  -> Show conversation history")
-        print("clear    -> Clear conversation history")
-        print("help     -> Show available commands")
-        print("exit     -> Exit application")
+        print("Where is my order ORD1002?")
+
+        print("Calculate discount for premium with amount 2500")
+
+        print("Delivery to Chennai?")
+
+        print("How many days can I request a refund?")
+
+        print("What payment methods are supported?")
+
+        print("Hello")
 
         print("-" * 70)
 
-    # --------------------------------------------------
-    # Start Chat Session
-    # --------------------------------------------------
+    # -------------------------------------------------
 
     def chat(self):
 
@@ -88,34 +90,27 @@ class SmartKartAssistant:
 
             question = input("\nYou > ").strip()
 
-            if not question:
+            if question == "":
                 continue
 
-            command = question.lower()
+            if question.lower() == "exit":
 
-            # Exit
-            if command == "exit":
-
-                print("\n" + EXIT_PROMPT)
+                print(EXIT_PROMPT)
                 break
 
-            # History
-            elif command == "history":
+            elif question.lower() == "history":
 
                 show_conversation_history()
                 continue
 
-            # Clear
-            elif command == "clear":
+            elif question.lower() == "clear":
 
                 clear_conversation()
                 continue
 
-            # Help
-            elif command == "help":
+            elif question.lower() == "help":
 
                 self.show_help()
                 continue
 
-            # Execute Customer Query
             execute_customer_query(question)

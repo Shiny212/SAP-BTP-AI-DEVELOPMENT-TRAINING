@@ -1,105 +1,119 @@
 """
 tools.py
 
-Business tools for SmartKart AI Customer Support.
+Business Tools for
+SmartKart AI Customer Support.
 """
 
 from langchain_core.tools import tool
 
 
-# --------------------------------------------------
-# Mock Database
-# --------------------------------------------------
-
-ORDERS = {
-    "ORD1001": "Processing",
-    "ORD1002": "Shipped",
-    "ORD1003": "Delivered",
-    "ORD1004": "Cancelled",
-}
-
-CUSTOMERS = {
-    "CUS1001": "Premium Member",
-    "CUS1002": "Regular Member",
-    "CUS1003": "Account Suspended",
-}
-
-DELIVERY = {
-    "Chennai": "2 Business Days",
-    "Bangalore": "3 Business Days",
-    "Hyderabad": "4 Business Days",
-    "Mumbai": "5 Business Days",
-}
-
-
-# --------------------------------------------------
+# ==========================================================
 # Order Status Tool
-# --------------------------------------------------
+# ==========================================================
 
 @tool
-def get_order_status(order_id: str) -> str:
+def check_order_status(order_id: str) -> str:
     """
     Returns the current status of a customer's order.
     """
 
-    order_id = order_id.upper().strip()
+    orders = {
+        "ORD1001": "Processing",
+        "ORD1002": "Shipped",
+        "ORD1003": "Delivered",
+        "ORD1004": "Out for Delivery",
+        "ORD1005": "Cancelled",
+    }
 
-    if order_id not in ORDERS:
-        return f"Order '{order_id}' was not found."
+    status = orders.get(order_id.upper())
 
-    return ORDERS[order_id]
+    if status:
+        return (
+            f"Order {order_id.upper()} "
+            f"is currently {status}."
+        )
 
-
-# --------------------------------------------------
-# Refund Eligibility Tool
-# --------------------------------------------------
-
-@tool
-def check_refund_eligibility(days_since_purchase: int) -> str:
-    """
-    Determines refund eligibility.
-    """
-
-    if days_since_purchase < 0:
-        return "Invalid number of days."
-
-    if days_since_purchase <= 30:
-        return "Eligible for full refund."
-
-    return "Refund period has expired."
+    return f"Order {order_id.upper()} was not found."
 
 
-# --------------------------------------------------
-# Delivery Estimate Tool
-# --------------------------------------------------
+# ==========================================================
+# Discount Calculator Tool
+# ==========================================================
 
 @tool
-def get_delivery_estimate(city: str) -> str:
+def calculate_discount(
+    customer_type: str,
+    amount: float,
+) -> str:
     """
-    Returns estimated delivery time.
+    Calculates the discount amount based on the customer type.
     """
 
-    city = city.title().strip()
+    customer_type = customer_type.lower()
 
-    if city not in DELIVERY:
-        return "Delivery estimate unavailable."
+    if customer_type == "premium":
+        discount = 10
+    elif customer_type == "standard":
+        discount = 5
+    else:
+        discount = 0
 
-    return DELIVERY[city]
+    discount_amount = amount * discount / 100
+    final_amount = amount - discount_amount
+
+    return (
+        f"Original Amount : ₹{amount:.2f}\n"
+        f"Discount        : {discount}%\n"
+        f"Discount Amount : ₹{discount_amount:.2f}\n"
+        f"Final Amount    : ₹{final_amount:.2f}"
+    )
 
 
-# --------------------------------------------------
-# Customer Account Tool
-# --------------------------------------------------
+# ==========================================================
+# Delivery Charge Tool
+# ==========================================================
 
 @tool
-def get_account_status(customer_id: str) -> str:
+def calculate_delivery_charge(
+    amount: float,
+) -> str:
     """
-    Returns customer account status.
+    Calculates the delivery charge based on the purchase amount.
     """
 
-    customer_id = customer_id.upper().strip()
+    if amount >= 2000:
+        return "Delivery Charge : FREE"
 
-    if customer_id not in CUSTOMERS:
-        return "Customer not found."
+    return "Delivery Charge : ₹100"
 
-    return CUSTOMERS[customer_id]
+
+# ==========================================================
+# Estimated Delivery Tool
+# ==========================================================
+
+@tool
+def get_estimated_delivery(
+    city: str,
+) -> str:
+    """
+    Returns the estimated delivery time for the specified city.
+    """
+
+    delivery_data = {
+        "chennai": "2 Business Days",
+        "coimbatore": "2 Business Days",
+        "trichy": "3 Business Days",
+        "madurai": "3 Business Days",
+        "bangalore": "4 Business Days",
+        "hyderabad": "5 Business Days",
+    }
+
+    delivery = delivery_data.get(city.lower())
+
+    if delivery:
+        return (
+            f"Estimated Delivery : {delivery}"
+        )
+
+    return "Delivery estimate unavailable for the specified city."

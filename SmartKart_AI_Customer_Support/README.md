@@ -1,42 +1,35 @@
-# SmartKart AI Customer Support Assistant
+# 🛒 SmartKart AI Customer Support Assistant
 
-## Project Overview
+An intelligent AI-powered customer support chatbot built using **LangChain**, **Google Gemini 3.1 Flash Lite**, **FAISS**, **HuggingFace Embeddings**, and **Streamlit**.
 
-SmartKart AI Customer Support Assistant is a Python-based application developed using LangChain and Google Gemini. The project demonstrates how Large Language Models (LLMs) can interact with business tools to provide intelligent responses to customer queries.
+The chatbot can intelligently route customer queries to:
 
-The assistant supports common customer service operations such as order tracking, refund eligibility, delivery estimates, and customer account status through LangChain Tool Calling.
-
----
-
-## Features
-
-- Google Gemini Integration
-- LangChain Tool Calling
-- Order Status Lookup
-- Refund Eligibility Check
-- Delivery Estimate
-- Customer Account Information
-- Conversation History
-- Interactive Command Line Interface
-- Exception Handling
-- Modular Project Structure
+- 🔧 Business Tools
+- 📚 Retrieval-Augmented Generation (RAG)
+- 🤖 General LLM Conversation
 
 ---
 
-## Technologies Used
+# Features
 
-- Python
-- LangChain
-- Google Gemini
-- Pydantic
-- Python Dotenv
+- ✅ Gemini 3.1 Flash Lite
+- ✅ LangChain
+- ✅ Pydantic Structured Output
+- ✅ Intelligent Route Selection
+- ✅ Tool Calling
+- ✅ FAISS Vector Database
+- ✅ HuggingFace Embeddings
+- ✅ Retrieval-Augmented Generation (RAG)
+- ✅ Conversation Memory
+- ✅ CLI Application
+- ✅ Streamlit Chatbot
 
 ---
 
-## Project Structure
+# Project Structure
 
 ```
-SmartKart_AI_Customer_Support
+SmartKart_AI_Customer_Support/
 │
 ├── app.py
 ├── assistant.py
@@ -44,63 +37,129 @@ SmartKart_AI_Customer_Support
 ├── conversation.py
 ├── models.py
 ├── prompts.py
+├── rag.py
 ├── tool_executor.py
 ├── tools.py
 ├── utils.py
-│
+├── streamlit_app.py
 ├── requirements.txt
-├── .gitignore
 ├── .env
+│
+├── knowledge_base/
+│   └── smartkart_policies.txt
+│
 └── README.md
 ```
 
 ---
 
-## Installation
+# Technologies Used
 
-### Clone the Repository
+- Python
+- LangChain
+- Google Gemini 3.1 Flash Lite
+- FAISS
+- HuggingFace Embeddings
+- Pydantic
+- Streamlit
+- Python Dotenv
 
-```bash
-git clone https://github.com/Shiny212/SAP-BTP-AI-DEVELOPMENT-TRAINING.git
+---
+
+# AI Workflow
+
+```
+Customer Query
+       │
+       ▼
+Pydantic Classification
+       │
+       ▼
+Route Selection
+ ┌───────────────┐
+ │ TOOL │ RAG │ LLM │
+ └───────────────┘
+       │
+       ▼
+Gemini Response
+       │
+       ▼
+Conversation Memory
 ```
 
-### Navigate to the Project Folder
+---
+
+# Route Selection
+
+## TOOL
+
+Handles:
+
+- Order Status
+- Discount Calculation
+- Delivery Charge
+- Estimated Delivery
+
+---
+
+## RAG
+
+Uses FAISS Knowledge Base.
+
+Handles:
+
+- Refund Policy
+- Return Policy
+- Shipping Policy
+- Company Policies
+- FAQs
+- Premium Membership
+
+---
+
+## LLM
+
+Handles:
+
+- Greetings
+- General Conversation
+- Casual Questions
+
+---
+
+# Installation
+
+Clone the repository.
+
+```bash
+git clone https://github.com/<your-username>/SmartKart_AI_Customer_Support.git
+```
+
+Go into the project.
 
 ```bash
 cd SmartKart_AI_Customer_Support
 ```
 
-### Create a Virtual Environment
-
-```bash
-python -m venv venv
-```
-
-### Activate the Virtual Environment
-
-Windows
-
-```bash
-venv\Scripts\activate
-```
-
-### Install Dependencies
+Install dependencies.
 
 ```bash
 pip install -r requirements.txt
 ```
 
-### Configure Environment Variables
+---
 
-Create a `.env` file and add your Google Gemini API key.
+# Environment Variables
 
-```text
+Create a `.env` file.
+
+```
 GOOGLE_API_KEY=YOUR_API_KEY
 ```
 
 ---
 
-## Running the Application
+# Run CLI Version
 
 ```bash
 python app.py
@@ -108,95 +167,80 @@ python app.py
 
 ---
 
-## Sample Execution
+# Run Streamlit Version
 
-```
-Customer : What is the status of order ORD1002?
-
-Assistant :
-The status of order ORD1002 is Shipped.
-```
-
-```
-Customer : Am I eligible for a refund after 15 days?
-
-Assistant :
-Yes, you are eligible for a full refund.
+```bash
+streamlit run streamlit_app.py
 ```
 
 ---
 
-## Available Commands
+# Sample Questions
 
-| Command | Description                  |
-| ------- | ---------------------------- |
-| history | Display conversation history |
-| clear   | Clear conversation history   |
-| help    | Display available commands   |
-| exit    | Close the application        |
-
----
-
-## Workflow
+### Tool Calling
 
 ```
-Customer Query
-      │
-      ▼
-Gemini LLM
-      │
-      ▼
-Tool Selection
-      │
-      ▼
-Business Tool Execution
-      │
-      ▼
-Tool Result
-      │
-      ▼
-Final Response
+Track my order ORD102
+```
+
+```
+Calculate discount for premium customer with amount 3500
+```
+
+```
+Delivery charge for ₹700
 ```
 
 ---
 
-## Learning Outcomes
+### RAG
 
-This project demonstrates the following concepts:
+```
+What is SmartKart's refund policy?
+```
 
-- LangChain Tool Calling
-- Google Gemini Integration
-- Prompt Engineering
-- Conversation Memory
-- Modular Python Development
-- Exception Handling
-- Business Logic Integration
+```
+Explain the return policy.
+```
+
+```
+Tell me about premium membership.
+```
 
 ---
 
-## Future Enhancements
+### LLM
+
+```
+Hello
+```
+
+```
+How are you?
+```
+
+```
+Thank you
+```
+
+---
+
+# Future Enhancements
 
 - Database Integration
-- SAP HANA Cloud Integration
-- REST API Integration
-- Web-Based Interface
+- User Authentication
+- Order Management APIs
 - Multi-language Support
-- Authentication and Authorization
+- Voice Assistant
+- Sentiment Analytics
+- Admin Dashboard
 
 ---
 
-## Author
+# Author
 
 **Shiny Belsiya**
 
-Bachelor of Engineering – Computer Science and Engineering
+SAP BTP AI Development Project
 
-SAP BTP AI Development Training
-
-GitHub: https://github.com/Shiny212
-
----
-
-## License
-
-This project was developed for educational purposes as part of SAP BTP AI Development Training.
+Powered by Google Gemini + LangChain + FAISS + HuggingFace Embeddings

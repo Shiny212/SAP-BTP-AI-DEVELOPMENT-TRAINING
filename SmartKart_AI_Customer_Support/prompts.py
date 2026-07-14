@@ -1,88 +1,105 @@
 """
 prompts.py
 
-Prompt templates used by the
-SmartKart AI Customer Support Assistant.
+Prompt Templates
 """
 
 from langchain_core.prompts import ChatPromptTemplate
-
 # --------------------------------------------------
-# System Prompt
-# --------------------------------------------------
-
-SYSTEM_PROMPT = """
-You are SmartKart AI Customer Support Assistant.
-
-Responsibilities:
-- Help customers politely and professionally.
-- Answer order-related questions.
-- Provide refund eligibility information.
-- Provide delivery estimates.
-- Provide customer account information.
-
-Guidelines:
-- Keep responses short and clear.
-- Use business-friendly language.
-- Use the information returned by tools exactly as provided.
-- Do not invent information.
-- Do not surround tool results with quotation marks.
-- Respond naturally and professionally.
-
-Example:
-
-Correct:
-The status of order ORD1002 is Shipped.
-
-Incorrect:
-The status of order ORD1002 is "Shipped".
-"""
-# --------------------------------------------------
-# Chat Prompt Template
-# --------------------------------------------------
-
-CHAT_PROMPT = ChatPromptTemplate.from_messages(
-    [
-        ("system", SYSTEM_PROMPT),
-        ("human", "{question}")
-    ]
-)
-
-# --------------------------------------------------
-# Welcome Prompt
+# Welcome & Exit Messages
 # --------------------------------------------------
 
 WELCOME_PROMPT = """
-Hello!
-
-Welcome to SmartKart AI Customer Support.
+Welcome to SmartKart AI Customer Support!
 
 I can help you with:
 
 • Order Status
-• Refund Eligibility
 • Delivery Information
-• Customer Account Details
+• Discount Calculation
+• Refund Policy
+• Return Policy
+• Shipping Policy
+• General Questions
 
-How may I assist you today?
+Type your question below to get started.
 """
 
-# --------------------------------------------------
-# Exit Prompt
-# --------------------------------------------------
 
 EXIT_PROMPT = """
-Thank you for choosing SmartKart.
+Thank you for using SmartKart AI Customer Support.
 
-Have a wonderful day!
+Have a great day!
 """
 
+
 # --------------------------------------------------
-# Error Prompt
+# Ticket Classification Prompt
 # --------------------------------------------------
 
-ERROR_PROMPT = """
-Sorry, something went wrong while processing your request.
+TICKET_CLASSIFIER_PROMPT = ChatPromptTemplate.from_messages(
+    [
+        (
+            "system",
+            """
+You are SmartKart AI Customer Support Assistant.
 
-Please try again.
+Your task is to analyze the customer's query and generate a structured support ticket.
+
+Populate ALL of the following fields:
+
+1. category
+2. priority
+3. sentiment
+4. summary
+5. recommended_team
+6. requires_human_agent
+7. route
+
+Routing Rules
+-------------
+
+Select ONLY ONE route.
+
+TOOL
+Use for:
+- Order Status
+- Discount Calculation
+- Delivery Charge
+- Delivery Estimate
+
+RAG
+Use for:
+- Refund Policy
+- Return Policy
+- Shipping Policy
+- Delivery Policy
+- Payment Policy
+- Premium Membership
+- FAQs
+- Company Policies
+
+LLM
+Use for:
+- Greetings
+- General Conversation
+- Casual Questions
+
+Output Rules
+------------
+
+- Return ONLY structured output.
+- Do not include explanations.
+- Do not include markdown.
+- Route must be exactly one of:
+  TOOL
+  RAG
+  LLM
 """
+        ),
+        (
+            "human",
+            "{query}"
+        )
+    ]
+)

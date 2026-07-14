@@ -1,11 +1,12 @@
 """
 utils.py
 
-Utility functions used throughout the
+Utility functions for the
 SmartKart AI Customer Support project.
 """
 
 import logging
+from typing import Any
 
 # --------------------------------------------------
 # Configure Logging
@@ -16,7 +17,6 @@ logging.basicConfig(
     format="%(levelname)s : %(message)s"
 )
 
-# Hide unnecessary library logs
 logging.getLogger("httpx").setLevel(logging.ERROR)
 logging.getLogger("google").setLevel(logging.ERROR)
 logging.getLogger("langchain").setLevel(logging.ERROR)
@@ -24,12 +24,12 @@ logging.getLogger("langchain").setLevel(logging.ERROR)
 logger = logging.getLogger(__name__)
 
 # --------------------------------------------------
-# Print Banner
+# Banner
 # --------------------------------------------------
 
-def print_banner(title: str):
+def print_banner(title: str) -> None:
     """
-    Prints a centered application banner.
+    Prints the application banner.
     """
 
     print("=" * 70)
@@ -38,12 +38,12 @@ def print_banner(title: str):
 
 
 # --------------------------------------------------
-# Print Section
+# Section
 # --------------------------------------------------
 
-def print_section(title: str):
+def print_section(title: str) -> None:
     """
-    Prints a section heading.
+    Prints a formatted section heading.
     """
 
     print("\n" + "-" * 70)
@@ -52,12 +52,12 @@ def print_section(title: str):
 
 
 # --------------------------------------------------
-# Print Divider
+# Divider
 # --------------------------------------------------
 
-def print_divider():
+def print_divider() -> None:
     """
-    Prints a divider line.
+    Prints a divider.
     """
 
     print("-" * 70)
@@ -67,7 +67,7 @@ def print_divider():
 # Extract Gemini Response
 # --------------------------------------------------
 
-def extract_text(response):
+def extract_text(response: Any) -> str:
     """
     Extracts plain text from a Gemini response.
     """
@@ -75,27 +75,22 @@ def extract_text(response):
     if response is None:
         return ""
 
-    # Already a string
     if isinstance(response, str):
         return response.replace('"', "").strip()
 
-    # AIMessage
     if hasattr(response, "content"):
 
         content = response.content
 
-        # Plain string response
         if isinstance(content, str):
             return content.replace('"', "").strip()
 
-        # Gemini list response
         if isinstance(content, list):
 
             text_parts = []
 
             for item in content:
 
-                # Dictionary response
                 if isinstance(item, dict):
 
                     if item.get("type") == "text":
@@ -105,27 +100,21 @@ def extract_text(response):
                         if text:
                             text_parts.append(text)
 
-                # Object response
                 elif hasattr(item, "text"):
 
                     if item.text:
                         text_parts.append(item.text)
 
-            text = "\n".join(text_parts)
-
-            # Remove unwanted quotes
-            text = text.replace('"', "")
-
-            return text.strip()
+            return "\n".join(text_parts).replace('"', "").strip()
 
     return str(response).replace('"', "").strip()
 
 
 # --------------------------------------------------
-# Display AI Response
+# Display Response
 # --------------------------------------------------
 
-def display_response(response):
+def display_response(response: Any) -> None:
     """
     Displays the assistant response.
     """
@@ -137,7 +126,7 @@ def display_response(response):
 # Success Message
 # --------------------------------------------------
 
-def print_success(message: str):
+def print_success(message: str) -> None:
     """
     Displays a success message.
     """
@@ -149,7 +138,7 @@ def print_success(message: str):
 # Error Message
 # --------------------------------------------------
 
-def print_error(message: str):
+def print_error(message: str) -> None:
     """
     Displays an error message.
     """
