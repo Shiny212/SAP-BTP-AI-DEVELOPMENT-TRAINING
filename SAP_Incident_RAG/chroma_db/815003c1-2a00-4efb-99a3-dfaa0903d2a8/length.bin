@@ -1,0 +1,3 @@
+invalid type: string "SAP Incident Record\n\nIncident ID: INC-1245\n\nSAP Module: SAP SD\n\nCategory: Database\n\nPriority: P1\n\nIssue Summary:\nWorkflow approval pending indefinitely\n\nIssue Description:\nWorkflow remained in pending status beyond SLA.\n\nRoot Cause:\nMissing workflow agent assignment\n\nResolution:\nAssigned workflow agents and restarted workflow.\n\nOwner Team:\n
+Status:
+Comp
