@@ -1,0 +1,759 @@
+2026-07-21 16:07:20 | INFO     | SAP Support Agent | New session started: 21c4ac31-a810-4617-959e-511a26bcb32d
+2026-07-21 16:07:39 | INFO     | SAP Support Agent | Invoking Gemini Agent (call_model)...
+2026-07-21 16:07:40 | ERROR    | SAP Support Agent | Application Error: Error calling model 'gemini-2.5-flash' (NOT_FOUND): 404 NOT_FOUND. {'error': {'code': 404, 'message': 'This model models/gemini-2.5-flash is no longer available to new users. Please update your code to use a newer model for the latest features and improvements.', 'status': 'NOT_FOUND'}}
+Traceback (most recent call last):
+  File "C:\Users\SHINY BELSIYA.R\OneDrive\Desktop\SAP-BTP-AI-DEVELOPMENT-TRAINING\SAP_Support_Agent\.venv\Lib\site-packages\langchain_google_genai\chat_models.py", line 3302, in _generate
+    response: GenerateContentResponse = self.client.models.generate_content(
+                                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        **request,
+        ^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\SHINY BELSIYA.R\OneDrive\Desktop\SAP-BTP-AI-DEVELOPMENT-TRAINING\SAP_Support_Agent\.venv\Lib\site-packages\google\genai\models.py", line 6535, in generate_content
+    return self._generate_content(
+           ~~~~~~~~~~~~~~~~~~~~~~^
+        model=model, contents=contents, config=parsed_config
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\SHINY BELSIYA.R\OneDrive\Desktop\SAP-BTP-AI-DEVELOPMENT-TRAINING\SAP_Support_Agent\.venv\Lib\site-packages\google\genai\models.py", line 4986, in _generate_content
+    response = self._api_client.request(
+        'post', path, request_dict, http_options
+    )
+  File "C:\Users\SHINY BELSIYA.R\OneDrive\Desktop\SAP-BTP-AI-DEVELOPMENT-TRAINING\SAP_Support_Agent\.venv\Lib\site-packages\google\genai\_api_client.py", line 1650, in request
+    response = self._request(http_request, http_options, stream=False)
+  File "C:\Users\SHINY BELSIYA.R\OneDrive\Desktop\SAP-BTP-AI-DEVELOPMENT-TRAINING\SAP_Support_Agent\.venv\Lib\site-packages\google\genai\_api_client.py", line 1441, in _request
+    return retry(self._request_once, http_request, stream)  # type: ignore[no-any-return]
+  File "C:\Users\SHINY BELSIYA.R\OneDrive\Desktop\SAP-BTP-AI-DEVELOPMENT-TRAINING\SAP_Support_Agent\.venv\Lib\site-packages\tenacity\__init__.py", line 470, in __call__
+    do = self.iter(retry_state=retry_state)
+  File "C:\Users\SHINY BELSIYA.R\OneDrive\Desktop\SAP-BTP-AI-DEVELOPMENT-TRAINING\SAP_Support_Agent\.venv\Lib\site-packages\tenacity\__init__.py", line 371, in iter
+    result = action(retry_state)
+  File "C:\Users\SHINY BELSIYA.R\OneDrive\Desktop\SAP-BTP-AI-DEVELOPMENT-TRAINING\SAP_Support_Agent\.venv\Lib\site-packages\tenacity\__init__.py", line 393, in <lambda>
+    self._add_action_func(lambda rs: rs.outcome.result())
+                                     ~~~~~~~~~~~~~~~~~^^
+  File "C:\Python314\Lib\concurrent\futures\_base.py", line 443, in result
+    return self.__get_result()
+           ~~~~~~~~~~~~~~~~~^^
+  File "C:\Python314\Lib\concurrent\futures\_base.py", line 395, in __get_result
+    raise self._exception
+  File "C:\Users\SHINY BELSIYA.R\OneDrive\Desktop\SAP-BTP-AI-DEVELOPMENT-TRAINING\SAP_Support_Agent\.venv\Lib\site-packages\tenacity\__init__.py", line 473, in __call__
+    result = fn(*args, **kwargs)
+  File "C:\Users\SHINY BELSIYA.R\OneDrive\Desktop\SAP-BTP-AI-DEVELOPMENT-TRAINING\SAP_Support_Agent\.venv\Lib\site-packages\google\genai\_api_client.py", line 1420, in _request_once
+    errors.APIError.raise_for_response(response)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "C:\Users\SHINY BELSIYA.R\OneDrive\Desktop\SAP-BTP-AI-DEVELOPMENT-TRAINING\SAP_Support_Agent\.venv\Lib\site-packages\google\genai\errors.py", line 155, in raise_for_response
+    cls.raise_error(response.status_code, response_json, response)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SHINY BELSIYA.R\OneDrive\Desktop\SAP-BTP-AI-DEVELOPMENT-TRAINING\SAP_Support_Agent\.venv\Lib\site-packages\google\genai\errors.py", line 184, in raise_error
+    raise ClientError(status_code, response_json, response)
+google.genai.errors.ClientError: 404 NOT_FOUND. {'error': {'code': 404, 'message': 'This model models/gemini-2.5-flash is no longer available to new users. Please update your code to use a newer model for the latest features and improvements.', 'status': 'NOT_FOUND'}}
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\SHINY BELSIYA.R\OneDrive\Desktop\SAP-BTP-AI-DEVELOPMENT-TRAINING\SAP_Support_Agent\src\nodes.py", line 54, in call_model
+    response = BOUND_LLM.invoke(messages)
+  File "C:\Users\SHINY BELSIYA.R\OneDrive\Desktop\SAP-BTP-AI-DEVELOPMENT-TRAINING\SAP_Support_Agent\.venv\Lib\site-packages\langchain_core\runnables\base.py", line 6002, in invoke
+    return self.bound.invoke(
+           ~~~~~~~~~~~~~~~~~^
+        input,
+        ^^^^^^
+        self._merge_configs(config),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        **{**self.kwargs, **kwargs},
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\SHINY BELSIYA.R\OneDrive\Desktop\SAP-BTP-AI-DEVELOPMENT-TRAINING\SAP_Support_Agent\.venv\Lib\site-packages\langchain_google_genai\chat_models.py", line 2754, in invoke
+    return super().invoke(input, config, stop=stop, **kwargs)
+           ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SHINY BELSIYA.R\OneDrive\Desktop\SAP-BTP-AI-DEVELOPMENT-TRAINING\SAP_Support_Agent\.venv\Lib\site-packages\langchain_core\language_models\chat_models.py", line 476, in invoke
+    self.generate_prompt(
+    ~~~~~~~~~~~~~~~~~~~~^
+        [self._convert_input(input)],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    ).generations[0][0],
+    ^
+  File "C:\Users\SHINY BELSIYA.R\OneDrive\Desktop\SAP-BTP-AI-DEVELOPMENT-TRAINING\SAP_Support_Agent\.venv\Lib\site-packages\langchain_core\language_models\chat_models.py", line 1849, in generate_prompt
+    return self.generate(prompt_messages, stop=stop, callbacks=callbacks, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SHINY BELSIYA.R\OneDrive\Desktop\SAP-BTP-AI-DEVELOPMENT-TRAINING\SAP_Support_Agent\.venv\Lib\site-packages\langchain_core\language_models\chat_models.py", line 1656, in generate
+    self._generate_with_cache(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^
+        m,
+        ^^
+    ...<2 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    )
+    ^
+  File "C:\Users\SHINY BELSIYA.R\OneDrive\Desktop\SAP-BTP-AI-DEVELOPMENT-TRAINING\SAP_Support_Agent\.venv\Lib\site-packages\langchain_core\language_models\chat_models.py", line 1994, in _generate_with_cache
+    result = self._generate(
+        messages, stop=stop, run_manager=run_manager, **kwargs
+    )
+  File "C:\Users\SHINY BELSIYA.R\OneDrive\Desktop\SAP-BTP-AI-DEVELOPMENT-TRAINING\SAP_Support_Agent\.venv\Lib\site-packages\langchain_google_genai\chat_models.py", line 3306, in _generate
+    _handle_client_error(e, request)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "C:\Users\SHINY BELSIYA.R\OneDrive\Desktop\SAP-BTP-AI-DEVELOPMENT-TRAINING\SAP_Support_Agent\.venv\Lib\site-packages\langchain_google_genai\chat_models.py", line 177, in _handle_client_error
+    raise ChatGoogleGenerativeAIError(msg) from e
+langchain_google_genai.chat_models.ChatGoogleGenerativeAIError: Error calling model 'gemini-2.5-flash' (NOT_FOUND): 404 NOT_FOUND. {'error': {'code': 404, 'message': 'This model models/gemini-2.5-flash is no longer available to new users. Please update your code to use a newer model for the latest features and improvements.', 'status': 'NOT_FOUND'}}
+2026-07-21 16:07:40 | ERROR    | SAP Support Agent | Error calling model 'gemini-2.5-flash' (NOT_FOUND): 404 NOT_FOUND. {'error': {'code': 404, 'message': 'This model models/gemini-2.5-flash is no longer available to new users. Please update your code to use a newer model for the latest features and improvements.', 'status': 'NOT_FOUND'}}
+Traceback (most recent call last):
+  File "C:\Users\SHINY BELSIYA.R\OneDrive\Desktop\SAP-BTP-AI-DEVELOPMENT-TRAINING\SAP_Support_Agent\.venv\Lib\site-packages\langchain_google_genai\chat_models.py", line 3302, in _generate
+    response: GenerateContentResponse = self.client.models.generate_content(
+                                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        **request,
+        ^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\SHINY BELSIYA.R\OneDrive\Desktop\SAP-BTP-AI-DEVELOPMENT-TRAINING\SAP_Support_Agent\.venv\Lib\site-packages\google\genai\models.py", line 6535, in generate_content
+    return self._generate_content(
+           ~~~~~~~~~~~~~~~~~~~~~~^
+        model=model, contents=contents, config=parsed_config
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\SHINY BELSIYA.R\OneDrive\Desktop\SAP-BTP-AI-DEVELOPMENT-TRAINING\SAP_Support_Agent\.venv\Lib\site-packages\google\genai\models.py", line 4986, in _generate_content
+    response = self._api_client.request(
+        'post', path, request_dict, http_options
+    )
+  File "C:\Users\SHINY BELSIYA.R\OneDrive\Desktop\SAP-BTP-AI-DEVELOPMENT-TRAINING\SAP_Support_Agent\.venv\Lib\site-packages\google\genai\_api_client.py", line 1650, in request
+    response = self._request(http_request, http_options, stream=False)
+  File "C:\Users\SHINY BELSIYA.R\OneDrive\Desktop\SAP-BTP-AI-DEVELOPMENT-TRAINING\SAP_Support_Agent\.venv\Lib\site-packages\google\genai\_api_client.py", line 1441, in _request
+    return retry(self._request_once, http_request, stream)  # type: ignore[no-any-return]
+  File "C:\Users\SHINY BELSIYA.R\OneDrive\Desktop\SAP-BTP-AI-DEVELOPMENT-TRAINING\SAP_Support_Agent\.venv\Lib\site-packages\tenacity\__init__.py", line 470, in __call__
+    do = self.iter(retry_state=retry_state)
+  File "C:\Users\SHINY BELSIYA.R\OneDrive\Desktop\SAP-BTP-AI-DEVELOPMENT-TRAINING\SAP_Support_Agent\.venv\Lib\site-packages\tenacity\__init__.py", line 371, in iter
+    result = action(retry_state)
+  File "C:\Users\SHINY BELSIYA.R\OneDrive\Desktop\SAP-BTP-AI-DEVELOPMENT-TRAINING\SAP_Support_Agent\.venv\Lib\site-packages\tenacity\__init__.py", line 393, in <lambda>
+    self._add_action_func(lambda rs: rs.outcome.result())
+                                     ~~~~~~~~~~~~~~~~~^^
+  File "C:\Python314\Lib\concurrent\futures\_base.py", line 443, in result
+    return self.__get_result()
+           ~~~~~~~~~~~~~~~~~^^
+  File "C:\Python314\Lib\concurrent\futures\_base.py", line 395, in __get_result
+    raise self._exception
+  File "C:\Users\SHINY BELSIYA.R\OneDrive\Desktop\SAP-BTP-AI-DEVELOPMENT-TRAINING\SAP_Support_Agent\.venv\Lib\site-packages\tenacity\__init__.py", line 473, in __call__
+    result = fn(*args, **kwargs)
+  File "C:\Users\SHINY BELSIYA.R\OneDrive\Desktop\SAP-BTP-AI-DEVELOPMENT-TRAINING\SAP_Support_Agent\.venv\Lib\site-packages\google\genai\_api_client.py", line 1420, in _request_once
+    errors.APIError.raise_for_response(response)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "C:\Users\SHINY BELSIYA.R\OneDrive\Desktop\SAP-BTP-AI-DEVELOPMENT-TRAINING\SAP_Support_Agent\.venv\Lib\site-packages\google\genai\errors.py", line 155, in raise_for_response
+    cls.raise_error(response.status_code, response_json, response)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SHINY BELSIYA.R\OneDrive\Desktop\SAP-BTP-AI-DEVELOPMENT-TRAINING\SAP_Support_Agent\.venv\Lib\site-packages\google\genai\errors.py", line 184, in raise_error
+    raise ClientError(status_code, response_json, response)
+google.genai.errors.ClientError: 404 NOT_FOUND. {'error': {'code': 404, 'message': 'This model models/gemini-2.5-flash is no longer available to new users. Please update your code to use a newer model for the latest features and improvements.', 'status': 'NOT_FOUND'}}
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\SHINY BELSIYA.R\OneDrive\Desktop\SAP-BTP-AI-DEVELOPMENT-TRAINING\SAP_Support_Agent\app.py", line 50, in chat
+    result = app.invoke(
+        {
+    ...<4 lines>...
+        config=config,
+    )
+  File "C:\Users\SHINY BELSIYA.R\OneDrive\Desktop\SAP-BTP-AI-DEVELOPMENT-TRAINING\SAP_Support_Agent\.venv\Lib\site-packages\langgraph\pregel\main.py", line 3913, in invoke
+    for chunk in self.stream(
+                 ~~~~~~~~~~~^
+        input,
+        ^^^^^^
+    ...<11 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    ):
+    ^
+  File "C:\Users\SHINY BELSIYA.R\OneDrive\Desktop\SAP-BTP-AI-DEVELOPMENT-TRAINING\SAP_Support_Agent\.venv\Lib\site-packages\langgraph\pregel\main.py", line 2967, in stream
+    for _ in runner.tick(
+             ~~~~~~~~~~~^
+        [t for t in loop.tasks.values() if not t.writes],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<2 lines>...
+        schedule_task=loop.accept_push,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ):
+    ^
+  File "C:\Users\SHINY BELSIYA.R\OneDrive\Desktop\SAP-BTP-AI-DEVELOPMENT-TRAINING\SAP_Support_Agent\.venv\Lib\site-packages\langgraph\pregel\_runner.py", line 207, in tick
+    run_with_retry(
+    ~~~~~~~~~~~~~~^
+        t,
+        ^^
+    ...<10 lines>...
+        },
+        ^^
+    )
+    ^
+  File "C:\Users\SHINY BELSIYA.R\OneDrive\Desktop\SAP-BTP-AI-DEVELOPMENT-TRAINING\SAP_Support_Agent\.venv\Lib\site-packages\langgraph\pregel\_retry.py", line 617, in run_with_retry
+    return task.proc.invoke(task.input, config)
+           ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SHINY BELSIYA.R\OneDrive\Desktop\SAP-BTP-AI-DEVELOPMENT-TRAINING\SAP_Support_Agent\.venv\Lib\site-packages\langgraph\_internal\_runnable.py", line 684, in invoke
+    input = context.run(step.invoke, input, config, **kwargs)
+  File "C:\Users\SHINY BELSIYA.R\OneDrive\Desktop\SAP-BTP-AI-DEVELOPMENT-TRAINING\SAP_Support_Agent\.venv\Lib\site-packages\langgraph\_internal\_runnable.py", line 426, in invoke
+    ret = self.func(*args, **kwargs)
+  File "C:\Users\SHINY BELSIYA.R\OneDrive\Desktop\SAP-BTP-AI-DEVELOPMENT-TRAINING\SAP_Support_Agent\src\nodes.py", line 54, in call_model
+    response = BOUND_LLM.invoke(messages)
+  File "C:\Users\SHINY BELSIYA.R\OneDrive\Desktop\SAP-BTP-AI-DEVELOPMENT-TRAINING\SAP_Support_Agent\.venv\Lib\site-packages\langchain_core\runnables\base.py", line 6002, in invoke
+    return self.bound.invoke(
+           ~~~~~~~~~~~~~~~~~^
+        input,
+        ^^^^^^
+        self._merge_configs(config),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        **{**self.kwargs, **kwargs},
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\SHINY BELSIYA.R\OneDrive\Desktop\SAP-BTP-AI-DEVELOPMENT-TRAINING\SAP_Support_Agent\.venv\Lib\site-packages\langchain_google_genai\chat_models.py", line 2754, in invoke
+    return super().invoke(input, config, stop=stop, **kwargs)
+           ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SHINY BELSIYA.R\OneDrive\Desktop\SAP-BTP-AI-DEVELOPMENT-TRAINING\SAP_Support_Agent\.venv\Lib\site-packages\langchain_core\language_models\chat_models.py", line 476, in invoke
+    self.generate_prompt(
+    ~~~~~~~~~~~~~~~~~~~~^
+        [self._convert_input(input)],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    ).generations[0][0],
+    ^
+  File "C:\Users\SHINY BELSIYA.R\OneDrive\Desktop\SAP-BTP-AI-DEVELOPMENT-TRAINING\SAP_Support_Agent\.venv\Lib\site-packages\langchain_core\language_models\chat_models.py", line 1849, in generate_prompt
+    return self.generate(prompt_messages, stop=stop, callbacks=callbacks, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SHINY BELSIYA.R\OneDrive\Desktop\SAP-BTP-AI-DEVELOPMENT-TRAINING\SAP_Support_Agent\.venv\Lib\site-packages\langchain_core\language_models\chat_models.py", line 1656, in generate
+    self._generate_with_cache(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^
+        m,
+        ^^
+    ...<2 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    )
+    ^
+  File "C:\Users\SHINY BELSIYA.R\OneDrive\Desktop\SAP-BTP-AI-DEVELOPMENT-TRAINING\SAP_Support_Agent\.venv\Lib\site-packages\langchain_core\language_models\chat_models.py", line 1994, in _generate_with_cache
+    result = self._generate(
+        messages, stop=stop, run_manager=run_manager, **kwargs
+    )
+  File "C:\Users\SHINY BELSIYA.R\OneDrive\Desktop\SAP-BTP-AI-DEVELOPMENT-TRAINING\SAP_Support_Agent\.venv\Lib\site-packages\langchain_google_genai\chat_models.py", line 3306, in _generate
+    _handle_client_error(e, request)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "C:\Users\SHINY BELSIYA.R\OneDrive\Desktop\SAP-BTP-AI-DEVELOPMENT-TRAINING\SAP_Support_Agent\.venv\Lib\site-packages\langchain_google_genai\chat_models.py", line 177, in _handle_client_error
+    raise ChatGoogleGenerativeAIError(msg) from e
+langchain_google_genai.chat_models.ChatGoogleGenerativeAIError: Error calling model 'gemini-2.5-flash' (NOT_FOUND): 404 NOT_FOUND. {'error': {'code': 404, 'message': 'This model models/gemini-2.5-flash is no longer available to new users. Please update your code to use a newer model for the latest features and improvements.', 'status': 'NOT_FOUND'}}
+During task with name 'agent' and id '4e764dfd-7b5e-0391-8848-6378ed724d2b'
+2026-07-21 16:08:57 | INFO     | SAP Support Agent | Session ended: 21c4ac31-a810-4617-959e-511a26bcb32d
+2026-07-21 16:09:31 | INFO     | SAP Support Agent | New session started: 633c09b1-12e9-4fec-8610-140f372bd946
+2026-07-21 16:09:36 | INFO     | SAP Support Agent | Invoking Gemini Agent (call_model)...
+2026-07-21 16:09:39 | INFO     | SAP Support Agent | Gemini response generated successfully.
+2026-07-21 16:09:50 | INFO     | SAP Support Agent | Invoking Gemini Agent (call_model)...
+2026-07-21 16:09:51 | INFO     | SAP Support Agent | Gemini response generated successfully.
+2026-07-21 16:09:51 | INFO     | SAP Support Agent | Executing Tool: search_kb
+2026-07-21 16:09:51 | INFO     | SAP Support Agent | Knowledge Base Match Found: btp
+2026-07-21 16:09:51 | INFO     | SAP Support Agent | Running Issue Classification Node...
+2026-07-21 16:09:51 | ERROR    | SAP Support Agent | Application Error: 'list' object has no attribute 'strip'
+Traceback (most recent call last):
+  File "C:\Users\SHINY BELSIYA.R\OneDrive\Desktop\SAP-BTP-AI-DEVELOPMENT-TRAINING\SAP_Support_Agent\src\nodes.py", line 87, in classify_issue_node
+    category_result = response.content.strip()
+                      ^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'list' object has no attribute 'strip'
+2026-07-21 16:09:51 | ERROR    | SAP Support Agent | 'list' object has no attribute 'strip'
+Traceback (most recent call last):
+  File "C:\Users\SHINY BELSIYA.R\OneDrive\Desktop\SAP-BTP-AI-DEVELOPMENT-TRAINING\SAP_Support_Agent\app.py", line 50, in chat
+    result = app.invoke(
+        {
+    ...<4 lines>...
+        config=config,
+    )
+  File "C:\Users\SHINY BELSIYA.R\OneDrive\Desktop\SAP-BTP-AI-DEVELOPMENT-TRAINING\SAP_Support_Agent\.venv\Lib\site-packages\langgraph\pregel\main.py", line 3913, in invoke
+    for chunk in self.stream(
+                 ~~~~~~~~~~~^
+        input,
+        ^^^^^^
+    ...<11 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    ):
+    ^
+  File "C:\Users\SHINY BELSIYA.R\OneDrive\Desktop\SAP-BTP-AI-DEVELOPMENT-TRAINING\SAP_Support_Agent\.venv\Lib\site-packages\langgraph\pregel\main.py", line 2967, in stream
+    for _ in runner.tick(
+             ~~~~~~~~~~~^
+        [t for t in loop.tasks.values() if not t.writes],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<2 lines>...
+        schedule_task=loop.accept_push,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ):
+    ^
+  File "C:\Users\SHINY BELSIYA.R\OneDrive\Desktop\SAP-BTP-AI-DEVELOPMENT-TRAINING\SAP_Support_Agent\.venv\Lib\site-packages\langgraph\pregel\_runner.py", line 207, in tick
+    run_with_retry(
+    ~~~~~~~~~~~~~~^
+        t,
+        ^^
+    ...<10 lines>...
+        },
+        ^^
+    )
+    ^
+  File "C:\Users\SHINY BELSIYA.R\OneDrive\Desktop\SAP-BTP-AI-DEVELOPMENT-TRAINING\SAP_Support_Agent\.venv\Lib\site-packages\langgraph\pregel\_retry.py", line 617, in run_with_retry
+    return task.proc.invoke(task.input, config)
+           ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SHINY BELSIYA.R\OneDrive\Desktop\SAP-BTP-AI-DEVELOPMENT-TRAINING\SAP_Support_Agent\.venv\Lib\site-packages\langgraph\_internal\_runnable.py", line 684, in invoke
+    input = context.run(step.invoke, input, config, **kwargs)
+  File "C:\Users\SHINY BELSIYA.R\OneDrive\Desktop\SAP-BTP-AI-DEVELOPMENT-TRAINING\SAP_Support_Agent\.venv\Lib\site-packages\langgraph\_internal\_runnable.py", line 426, in invoke
+    ret = self.func(*args, **kwargs)
+  File "C:\Users\SHINY BELSIYA.R\OneDrive\Desktop\SAP-BTP-AI-DEVELOPMENT-TRAINING\SAP_Support_Agent\src\nodes.py", line 87, in classify_issue_node
+    category_result = response.content.strip()
+                      ^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'list' object has no attribute 'strip'
+During task with name 'classification' and id 'b4d9e08b-ca30-5297-e24c-de194055855a'
+2026-07-21 16:10:06 | INFO     | SAP Support Agent | Invoking Gemini Agent (call_model)...
+2026-07-21 16:10:07 | INFO     | SAP Support Agent | Gemini response generated successfully.
+2026-07-21 16:10:07 | INFO     | SAP Support Agent | Executing Tool: create_support_ticket
+2026-07-21 16:10:07 | INFO     | SAP Support Agent | Support Ticket Created | SAP-FAEE6D40 | High
+2026-07-21 16:10:07 | INFO     | SAP Support Agent | Issue Summary: CPI authentication failure
+2026-07-21 16:10:07 | INFO     | SAP Support Agent | Running Issue Classification Node...
+2026-07-21 16:10:07 | ERROR    | SAP Support Agent | Application Error: 'list' object has no attribute 'strip'
+Traceback (most recent call last):
+  File "C:\Users\SHINY BELSIYA.R\OneDrive\Desktop\SAP-BTP-AI-DEVELOPMENT-TRAINING\SAP_Support_Agent\src\nodes.py", line 87, in classify_issue_node
+    category_result = response.content.strip()
+                      ^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'list' object has no attribute 'strip'
+2026-07-21 16:10:07 | ERROR    | SAP Support Agent | 'list' object has no attribute 'strip'
+Traceback (most recent call last):
+  File "C:\Users\SHINY BELSIYA.R\OneDrive\Desktop\SAP-BTP-AI-DEVELOPMENT-TRAINING\SAP_Support_Agent\app.py", line 50, in chat
+    result = app.invoke(
+        {
+    ...<4 lines>...
+        config=config,
+    )
+  File "C:\Users\SHINY BELSIYA.R\OneDrive\Desktop\SAP-BTP-AI-DEVELOPMENT-TRAINING\SAP_Support_Agent\.venv\Lib\site-packages\langgraph\pregel\main.py", line 3913, in invoke
+    for chunk in self.stream(
+                 ~~~~~~~~~~~^
+        input,
+        ^^^^^^
+    ...<11 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    ):
+    ^
+  File "C:\Users\SHINY BELSIYA.R\OneDrive\Desktop\SAP-BTP-AI-DEVELOPMENT-TRAINING\SAP_Support_Agent\.venv\Lib\site-packages\langgraph\pregel\main.py", line 2967, in stream
+    for _ in runner.tick(
+             ~~~~~~~~~~~^
+        [t for t in loop.tasks.values() if not t.writes],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<2 lines>...
+        schedule_task=loop.accept_push,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ):
+    ^
+  File "C:\Users\SHINY BELSIYA.R\OneDrive\Desktop\SAP-BTP-AI-DEVELOPMENT-TRAINING\SAP_Support_Agent\.venv\Lib\site-packages\langgraph\pregel\_runner.py", line 207, in tick
+    run_with_retry(
+    ~~~~~~~~~~~~~~^
+        t,
+        ^^
+    ...<10 lines>...
+        },
+        ^^
+    )
+    ^
+  File "C:\Users\SHINY BELSIYA.R\OneDrive\Desktop\SAP-BTP-AI-DEVELOPMENT-TRAINING\SAP_Support_Agent\.venv\Lib\site-packages\langgraph\pregel\_retry.py", line 617, in run_with_retry
+    return task.proc.invoke(task.input, config)
+           ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SHINY BELSIYA.R\OneDrive\Desktop\SAP-BTP-AI-DEVELOPMENT-TRAINING\SAP_Support_Agent\.venv\Lib\site-packages\langgraph\_internal\_runnable.py", line 684, in invoke
+    input = context.run(step.invoke, input, config, **kwargs)
+  File "C:\Users\SHINY BELSIYA.R\OneDrive\Desktop\SAP-BTP-AI-DEVELOPMENT-TRAINING\SAP_Support_Agent\.venv\Lib\site-packages\langgraph\_internal\_runnable.py", line 426, in invoke
+    ret = self.func(*args, **kwargs)
+  File "C:\Users\SHINY BELSIYA.R\OneDrive\Desktop\SAP-BTP-AI-DEVELOPMENT-TRAINING\SAP_Support_Agent\src\nodes.py", line 87, in classify_issue_node
+    category_result = response.content.strip()
+                      ^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'list' object has no attribute 'strip'
+During task with name 'classification' and id '0ead7f02-e614-22e3-2d3f-160ced5053d6'
+2026-07-21 16:17:18 | INFO     | SAP Support Agent | Session ended: 633c09b1-12e9-4fec-8610-140f372bd946
+2026-07-21 16:18:01 | INFO     | SAP Support Agent | New session started: 8bde1df4-047c-4ef9-85bd-3bd6398f12cc
+2026-07-21 16:18:04 | INFO     | SAP Support Agent | Invoking Gemini Agent (call_model)...
+2026-07-21 16:18:06 | INFO     | SAP Support Agent | Gemini response generated successfully.
+2026-07-21 16:18:14 | INFO     | SAP Support Agent | Invoking Gemini Agent (call_model)...
+2026-07-21 16:18:17 | INFO     | SAP Support Agent | Gemini response generated successfully.
+2026-07-21 16:18:28 | INFO     | SAP Support Agent | Invoking Gemini Agent (call_model)...
+2026-07-21 16:18:29 | INFO     | SAP Support Agent | Gemini response generated successfully.
+2026-07-21 16:18:29 | INFO     | SAP Support Agent | Executing Tool: search_kb
+2026-07-21 16:18:29 | INFO     | SAP Support Agent | Knowledge Base Match Found: btp
+2026-07-21 16:18:29 | INFO     | SAP Support Agent | Running Issue Classification Node...
+2026-07-21 16:18:30 | INFO     | SAP Support Agent | Classification resolved: SAP BTP
+2026-07-21 16:18:30 | INFO     | SAP Support Agent | Running Priority Assignment Node...
+2026-07-21 16:18:31 | INFO     | SAP Support Agent | Priority assigned: .
+
+High
+2026-07-21 16:18:31 | INFO     | SAP Support Agent | Running Draft Response Node...
+2026-07-21 16:18:34 | INFO     | SAP Support Agent | Draft response generated.
+2026-07-21 16:18:34 | INFO     | SAP Support Agent | Running Human Review Node (Checkpoint)...
+2026-07-21 16:18:34 | INFO     | SAP Support Agent | Human review checkpoint status: Approved
+2026-07-21 16:18:34 | INFO     | SAP Support Agent | Running Final Response Node...
+2026-07-21 16:18:34 | INFO     | SAP Support Agent | Final response formatting completed.
+2026-07-21 16:18:47 | INFO     | SAP Support Agent | Invoking Gemini Agent (call_model)...
+2026-07-21 16:18:48 | INFO     | SAP Support Agent | Gemini response generated successfully.
+2026-07-21 16:18:48 | INFO     | SAP Support Agent | Executing Tool: create_support_ticket
+2026-07-21 16:18:48 | INFO     | SAP Support Agent | Support Ticket Created | SAP-8CB19AFC | High
+2026-07-21 16:18:48 | INFO     | SAP Support Agent | Issue Summary: Authentication failure in SAP Integration Suite (CPI)
+2026-07-21 16:18:48 | INFO     | SAP Support Agent | Running Issue Classification Node...
+2026-07-21 16:18:49 | INFO     | SAP Support Agent | Classification resolved: SAP Integration Suite / CPI
+2026-07-21 16:18:49 | INFO     | SAP Support Agent | Running Priority Assignment Node...
+2026-07-21 16:18:51 | INFO     | SAP Support Agent | Priority assigned: [System Priority] Assigned priority level: High
+
+---
+
+### Support Ticket Created
+Your request regarding the **authentication failure in SAP Integration Suite (CPI)** has been successfully logged.
+
+**Ticket Details:**
+*   **Ticket ID:** SAP-8CB19AFC
+*   **Priority:** High
+*   **Status:** Open
+
+**Next Steps:**
+A support engineer will review your case shortly. To expedite the resolution, please ensure you have the following information ready for the support team:
+1.  **Correlation ID:** Found in the Message Processing Log (MPL) of the failed integration flow.
+2.  **Timestamp:** The exact time the authentication failure occurred.
+3.  **Authentication Type:** Are you using Basic Auth, OAuth, or Certificate-based authentication?
+4.  **Error Message:** Any specific error codes or messages returned by the system (e.g., 401 Unauthorized, 403 Forbidden).
+5.  **Endpoint/System:** The specific endpoint or external system involved in the authentication handshake.
+
+You can track the status of this ticket through the SAP Support Portal.
+2026-07-21 16:18:51 | INFO     | SAP Support Agent | Running Draft Response Node...
+2026-07-21 16:18:53 | INFO     | SAP Support Agent | Draft response generated.
+2026-07-21 16:18:53 | INFO     | SAP Support Agent | Running Human Review Node (Checkpoint)...
+2026-07-21 16:18:53 | INFO     | SAP Support Agent | Human review checkpoint status: Approved
+2026-07-21 16:18:53 | INFO     | SAP Support Agent | Running Final Response Node...
+2026-07-21 16:18:54 | INFO     | SAP Support Agent | Final response formatting completed.
+2026-07-21 16:19:03 | INFO     | SAP Support Agent | Invoking Gemini Agent (call_model)...
+2026-07-21 16:19:04 | INFO     | SAP Support Agent | Gemini response generated successfully.
+2026-07-21 16:19:04 | INFO     | SAP Support Agent | Executing Tool: check_system_status
+2026-07-21 16:19:04 | INFO     | SAP Support Agent | System Status Requested | SAP HANA Cloud | Operational
+2026-07-21 16:19:04 | INFO     | SAP Support Agent | Running Issue Classification Node...
+2026-07-21 16:19:06 | INFO     | SAP Support Agent | Classification resolved: [System Classification] Issue categorized as: SAP HANA Cloud
+[System Priority] Assigned priority level: Low
+
+---
+
+### System Status Report
+
+**System:** SAP HANA Cloud
+**Current Status:** Operational
+
+The SAP HANA Cloud service is currently reporting as **Operational**. There are no widespread service outages or performance degradation reported at this time.
+
+### Troubleshooting Steps (If you are experiencing issues)
+If you are personally unable to access your specific instance despite the global service being healthy, please check the following:
+
+1.  **SAP HANA Cloud Central:** Log in to your SAP BTP Cockpit and navigate to the **SAP HANA Cloud** section. Check the status of your specific instance. It should be marked as "Running."
+2.  **Instance Logs:** Check the logs within the Database Explorer for any specific errors related to your database instance.
+3.  **Network/Firewall:** Ensure your local IP address is still included in the **Allowed IP Addresses** list for your instance, as dynamic IPs can change.
+4.  **Service Quota:** Verify that your subaccount has not exceeded its allocated memory or storage quota, which could cause the instance to stop or become unresponsive.
+
+If your specific instance is showing as "Stopped" or "Error" in the BTP Cockpit, please attempt to restart it from the SAP HANA Cloud Central dashboard. If the issue persists, please provide the specific error message you are receiving.
+
+[Review Gate] Response verified against support compliance guidelines. Status: Approved.
+2026-07-21 16:19:06 | INFO     | SAP Support Agent | Running Priority Assignment Node...
+2026-07-21 16:19:08 | INFO     | SAP Support Agent | Priority assigned: Low
+2026-07-21 16:19:08 | INFO     | SAP Support Agent | Running Draft Response Node...
+2026-07-21 16:19:09 | INFO     | SAP Support Agent | Draft response generated.
+2026-07-21 16:19:09 | INFO     | SAP Support Agent | Running Human Review Node (Checkpoint)...
+2026-07-21 16:19:09 | INFO     | SAP Support Agent | Human review checkpoint status: Approved
+2026-07-21 16:19:09 | INFO     | SAP Support Agent | Running Final Response Node...
+2026-07-21 16:19:10 | INFO     | SAP Support Agent | Final response formatting completed.
+2026-07-21 16:19:24 | INFO     | SAP Support Agent | Invoking Gemini Agent (call_model)...
+2026-07-21 16:19:25 | INFO     | SAP Support Agent | Gemini response generated successfully.
+2026-07-21 16:19:25 | INFO     | SAP Support Agent | Executing Tool: create_support_ticket
+2026-07-21 16:19:25 | INFO     | SAP Support Agent | Support Ticket Created | SAP-F7451C48 | High
+2026-07-21 16:19:25 | INFO     | SAP Support Agent | Issue Summary: Critical outage reported in SAP BTP environment.
+2026-07-21 16:19:25 | INFO     | SAP Support Agent | Running Issue Classification Node...
+2026-07-21 16:19:27 | INFO     | SAP Support Agent | Classification resolved: [System Classification] Issue categorized as: SAP BTP
+[System Priority] Assigned priority level: High
+
+---
+
+### Support Ticket Created
+A critical support ticket has been opened for the reported outage in your SAP BTP environment.
+
+**Ticket Details:**
+*   **Ticket ID:** SAP-F7451C48
+*   **Priority:** High
+*   **Status:** Open
+
+**Immediate Actions Required:**
+To assist the support team in resolving this critical issue as quickly as possible, please provide the following information immediately:
+
+1.  **Region and Subaccount:** Which BTP region (e.g., US10, EU10) and subaccount are affected?
+2.  **Scope of Impact:** Is the entire subaccount down, or is it specific applications/services (e.g., HANA Cloud, Integration Suite, XSUAA)?
+3.  **Error Messages:** Please provide any error codes, stack traces, or "500 Internal Server Error" messages you are seeing.
+4.  **Timeline:** When did the outage begin, and have there been any recent changes (deployments, configuration updates) to the environment?
+5.  **Impact:** How many users or business processes are currently impacted?
+
+**Recommended Troubleshooting:**
+*   **Check SAP Trust Center:** Visit the [SAP Trust Center](https://status.sap.com/) to see if there is a known regional incident or scheduled maintenance affecting your data center.
+*   **BTP Cockpit Status:** Check the "Operations" or "Health" dashboard within your BTP Cockpit for any alerts on your specific services.
+*   **Avoid Changes:** Do not attempt to redeploy or modify service configurations while the environment is in an unstable state, as this may complicate the recovery process.
+
+A support engineer will prioritize this ticket. Please monitor your email or the SAP Support Portal for updates.
+
+[Review Gate] Response verified against support compliance guidelines. Status: Approved.
+2026-07-21 16:19:27 | INFO     | SAP Support Agent | Running Priority Assignment Node...
+2026-07-21 16:19:28 | INFO     | SAP Support Agent | Priority assigned: 
+2026-07-21 16:19:28 | INFO     | SAP Support Agent | Running Draft Response Node...
+2026-07-21 16:19:30 | INFO     | SAP Support Agent | Draft response generated.
+2026-07-21 16:19:30 | INFO     | SAP Support Agent | Running Human Review Node (Checkpoint)...
+2026-07-21 16:19:30 | INFO     | SAP Support Agent | Human review checkpoint status: Approved
+2026-07-21 16:19:30 | INFO     | SAP Support Agent | Running Final Response Node...
+2026-07-21 16:19:32 | INFO     | SAP Support Agent | Final response formatting completed.
+2026-07-21 16:28:25 | INFO     | SAP Support Agent | Session ended: 8bde1df4-047c-4ef9-85bd-3bd6398f12cc
+2026-07-21 16:28:39 | INFO     | SAP Support Agent | New session started: fe7db3c0-904b-43b5-a778-cc9d0e155ce4
+2026-07-21 16:28:54 | INFO     | SAP Support Agent | Invoking Gemini Agent (call_model)...
+2026-07-21 16:28:56 | INFO     | SAP Support Agent | Gemini response generated successfully.
+2026-07-21 16:29:04 | INFO     | SAP Support Agent | Invoking Gemini Agent (call_model)...
+2026-07-21 16:29:08 | INFO     | SAP Support Agent | Gemini response generated successfully.
+2026-07-21 16:29:17 | INFO     | SAP Support Agent | Invoking Gemini Agent (call_model)...
+2026-07-21 16:29:18 | INFO     | SAP Support Agent | Gemini response generated successfully.
+2026-07-21 16:29:18 | INFO     | SAP Support Agent | Executing Tool: search_kb
+2026-07-21 16:29:18 | INFO     | SAP Support Agent | Knowledge Base Match Found: btp
+2026-07-21 16:29:18 | INFO     | SAP Support Agent | Running Issue Classification Node...
+2026-07-21 16:29:18 | ERROR    | SAP Support Agent | Application Error: contents are required.
+Traceback (most recent call last):
+  File "C:\Users\SHINY BELSIYA.R\OneDrive\Desktop\SAP-BTP-AI-DEVELOPMENT-TRAINING\SAP_Support_Agent\src\nodes.py", line 118, in classify_issue_node
+    response = llm.invoke([prompt])
+  File "C:\Users\SHINY BELSIYA.R\OneDrive\Desktop\SAP-BTP-AI-DEVELOPMENT-TRAINING\SAP_Support_Agent\.venv\Lib\site-packages\langchain_google_genai\chat_models.py", line 2754, in invoke
+    return super().invoke(input, config, stop=stop, **kwargs)
+           ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SHINY BELSIYA.R\OneDrive\Desktop\SAP-BTP-AI-DEVELOPMENT-TRAINING\SAP_Support_Agent\.venv\Lib\site-packages\langchain_core\language_models\chat_models.py", line 476, in invoke
+    self.generate_prompt(
+    ~~~~~~~~~~~~~~~~~~~~^
+        [self._convert_input(input)],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    ).generations[0][0],
+    ^
+  File "C:\Users\SHINY BELSIYA.R\OneDrive\Desktop\SAP-BTP-AI-DEVELOPMENT-TRAINING\SAP_Support_Agent\.venv\Lib\site-packages\langchain_core\language_models\chat_models.py", line 1849, in generate_prompt
+    return self.generate(prompt_messages, stop=stop, callbacks=callbacks, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SHINY BELSIYA.R\OneDrive\Desktop\SAP-BTP-AI-DEVELOPMENT-TRAINING\SAP_Support_Agent\.venv\Lib\site-packages\langchain_core\language_models\chat_models.py", line 1656, in generate
+    self._generate_with_cache(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^
+        m,
+        ^^
+    ...<2 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    )
+    ^
+  File "C:\Users\SHINY BELSIYA.R\OneDrive\Desktop\SAP-BTP-AI-DEVELOPMENT-TRAINING\SAP_Support_Agent\.venv\Lib\site-packages\langchain_core\language_models\chat_models.py", line 1994, in _generate_with_cache
+    result = self._generate(
+        messages, stop=stop, run_manager=run_manager, **kwargs
+    )
+  File "C:\Users\SHINY BELSIYA.R\OneDrive\Desktop\SAP-BTP-AI-DEVELOPMENT-TRAINING\SAP_Support_Agent\.venv\Lib\site-packages\langchain_google_genai\chat_models.py", line 3302, in _generate
+    response: GenerateContentResponse = self.client.models.generate_content(
+                                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        **request,
+        ^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\SHINY BELSIYA.R\OneDrive\Desktop\SAP-BTP-AI-DEVELOPMENT-TRAINING\SAP_Support_Agent\.venv\Lib\site-packages\google\genai\models.py", line 6558, in generate_content
+    response = self._generate_content(
+        model=model, contents=contents, config=parsed_config_to_call
+    )
+  File "C:\Users\SHINY BELSIYA.R\OneDrive\Desktop\SAP-BTP-AI-DEVELOPMENT-TRAINING\SAP_Support_Agent\.venv\Lib\site-packages\google\genai\models.py", line 4962, in _generate_content
+    request_dict = _GenerateContentParameters_to_mldev(
+        self._api_client, parameter_model, None, parameter_model
+    )
+  File "C:\Users\SHINY BELSIYA.R\OneDrive\Desktop\SAP-BTP-AI-DEVELOPMENT-TRAINING\SAP_Support_Agent\.venv\Lib\site-packages\google\genai\models.py", line 1678, in _GenerateContentParameters_to_mldev
+    for item in t.t_contents(getv(from_object, ['contents']))
+                ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SHINY BELSIYA.R\OneDrive\Desktop\SAP-BTP-AI-DEVELOPMENT-TRAINING\SAP_Support_Agent\.venv\Lib\site-packages\google\genai\_transformers.py", line 477, in t_contents
+    raise ValueError('contents are required.')
+ValueError: contents are required.
+2026-07-21 16:29:18 | ERROR    | SAP Support Agent | contents are required.
+Traceback (most recent call last):
+  File "C:\Users\SHINY BELSIYA.R\OneDrive\Desktop\SAP-BTP-AI-DEVELOPMENT-TRAINING\SAP_Support_Agent\app.py", line 50, in chat
+    result = app.invoke(
+        {
+    ...<4 lines>...
+        config=config,
+    )
+  File "C:\Users\SHINY BELSIYA.R\OneDrive\Desktop\SAP-BTP-AI-DEVELOPMENT-TRAINING\SAP_Support_Agent\.venv\Lib\site-packages\langgraph\pregel\main.py", line 3913, in invoke
+    for chunk in self.stream(
+                 ~~~~~~~~~~~^
+        input,
+        ^^^^^^
+    ...<11 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    ):
+    ^
+  File "C:\Users\SHINY BELSIYA.R\OneDrive\Desktop\SAP-BTP-AI-DEVELOPMENT-TRAINING\SAP_Support_Agent\.venv\Lib\site-packages\langgraph\pregel\main.py", line 2967, in stream
+    for _ in runner.tick(
+             ~~~~~~~~~~~^
+        [t for t in loop.tasks.values() if not t.writes],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<2 lines>...
+        schedule_task=loop.accept_push,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ):
+    ^
+  File "C:\Users\SHINY BELSIYA.R\OneDrive\Desktop\SAP-BTP-AI-DEVELOPMENT-TRAINING\SAP_Support_Agent\.venv\Lib\site-packages\langgraph\pregel\_runner.py", line 207, in tick
+    run_with_retry(
+    ~~~~~~~~~~~~~~^
+        t,
+        ^^
+    ...<10 lines>...
+        },
+        ^^
+    )
+    ^
+  File "C:\Users\SHINY BELSIYA.R\OneDrive\Desktop\SAP-BTP-AI-DEVELOPMENT-TRAINING\SAP_Support_Agent\.venv\Lib\site-packages\langgraph\pregel\_retry.py", line 617, in run_with_retry
+    return task.proc.invoke(task.input, config)
+           ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SHINY BELSIYA.R\OneDrive\Desktop\SAP-BTP-AI-DEVELOPMENT-TRAINING\SAP_Support_Agent\.venv\Lib\site-packages\langgraph\_internal\_runnable.py", line 684, in invoke
+    input = context.run(step.invoke, input, config, **kwargs)
+  File "C:\Users\SHINY BELSIYA.R\OneDrive\Desktop\SAP-BTP-AI-DEVELOPMENT-TRAINING\SAP_Support_Agent\.venv\Lib\site-packages\langgraph\_internal\_runnable.py", line 426, in invoke
+    ret = self.func(*args, **kwargs)
+  File "C:\Users\SHINY BELSIYA.R\OneDrive\Desktop\SAP-BTP-AI-DEVELOPMENT-TRAINING\SAP_Support_Agent\src\nodes.py", line 118, in classify_issue_node
+    response = llm.invoke([prompt])
+  File "C:\Users\SHINY BELSIYA.R\OneDrive\Desktop\SAP-BTP-AI-DEVELOPMENT-TRAINING\SAP_Support_Agent\.venv\Lib\site-packages\langchain_google_genai\chat_models.py", line 2754, in invoke
+    return super().invoke(input, config, stop=stop, **kwargs)
+           ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SHINY BELSIYA.R\OneDrive\Desktop\SAP-BTP-AI-DEVELOPMENT-TRAINING\SAP_Support_Agent\.venv\Lib\site-packages\langchain_core\language_models\chat_models.py", line 476, in invoke
+    self.generate_prompt(
+    ~~~~~~~~~~~~~~~~~~~~^
+        [self._convert_input(input)],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    ).generations[0][0],
+    ^
+  File "C:\Users\SHINY BELSIYA.R\OneDrive\Desktop\SAP-BTP-AI-DEVELOPMENT-TRAINING\SAP_Support_Agent\.venv\Lib\site-packages\langchain_core\language_models\chat_models.py", line 1849, in generate_prompt
+    return self.generate(prompt_messages, stop=stop, callbacks=callbacks, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SHINY BELSIYA.R\OneDrive\Desktop\SAP-BTP-AI-DEVELOPMENT-TRAINING\SAP_Support_Agent\.venv\Lib\site-packages\langchain_core\language_models\chat_models.py", line 1656, in generate
+    self._generate_with_cache(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^
+        m,
+        ^^
+    ...<2 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    )
+    ^
+  File "C:\Users\SHINY BELSIYA.R\OneDrive\Desktop\SAP-BTP-AI-DEVELOPMENT-TRAINING\SAP_Support_Agent\.venv\Lib\site-packages\langchain_core\language_models\chat_models.py", line 1994, in _generate_with_cache
+    result = self._generate(
+        messages, stop=stop, run_manager=run_manager, **kwargs
+    )
+  File "C:\Users\SHINY BELSIYA.R\OneDrive\Desktop\SAP-BTP-AI-DEVELOPMENT-TRAINING\SAP_Support_Agent\.venv\Lib\site-packages\langchain_google_genai\chat_models.py", line 3302, in _generate
+    response: GenerateContentResponse = self.client.models.generate_content(
+                                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        **request,
+        ^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\SHINY BELSIYA.R\OneDrive\Desktop\SAP-BTP-AI-DEVELOPMENT-TRAINING\SAP_Support_Agent\.venv\Lib\site-packages\google\genai\models.py", line 6558, in generate_content
+    response = self._generate_content(
+        model=model, contents=contents, config=parsed_config_to_call
+    )
+  File "C:\Users\SHINY BELSIYA.R\OneDrive\Desktop\SAP-BTP-AI-DEVELOPMENT-TRAINING\SAP_Support_Agent\.venv\Lib\site-packages\google\genai\models.py", line 4962, in _generate_content
+    request_dict = _GenerateContentParameters_to_mldev(
+        self._api_client, parameter_model, None, parameter_model
+    )
+  File "C:\Users\SHINY BELSIYA.R\OneDrive\Desktop\SAP-BTP-AI-DEVELOPMENT-TRAINING\SAP_Support_Agent\.venv\Lib\site-packages\google\genai\models.py", line 1678, in _GenerateContentParameters_to_mldev
+    for item in t.t_contents(getv(from_object, ['contents']))
+                ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SHINY BELSIYA.R\OneDrive\Desktop\SAP-BTP-AI-DEVELOPMENT-TRAINING\SAP_Support_Agent\.venv\Lib\site-packages\google\genai\_transformers.py", line 477, in t_contents
+    raise ValueError('contents are required.')
+ValueError: contents are required.
+During task with name 'classification' and id '8e8b3c77-e8c7-0202-eb34-096a6d596cbb'
+2026-07-21 16:36:01 | INFO     | SAP Support Agent | Session ended: fe7db3c0-904b-43b5-a778-cc9d0e155ce4
+2026-07-21 16:36:11 | INFO     | SAP Support Agent | New session started: 139ae63d-821c-40b0-ac85-afeaf477ece1
+2026-07-21 16:36:18 | INFO     | SAP Support Agent | Invoking Gemini Agent (call_model)...
+2026-07-21 16:36:20 | INFO     | SAP Support Agent | Gemini response generated successfully.
+2026-07-21 16:36:30 | INFO     | SAP Support Agent | Invoking Gemini Agent (call_model)...
+2026-07-21 16:36:34 | INFO     | SAP Support Agent | Gemini response generated successfully.
+2026-07-21 16:36:41 | INFO     | SAP Support Agent | Session interrupted by user.
+2026-07-21 16:37:26 | INFO     | SAP Support Agent | New session started: 37b58de3-4f10-410f-8e2e-7d57d7266b7a
+2026-07-21 16:37:37 | INFO     | SAP Support Agent | Invoking Gemini Agent (call_model)...
+2026-07-21 16:37:40 | INFO     | SAP Support Agent | Gemini response generated successfully.
+2026-07-21 16:37:45 | INFO     | SAP Support Agent | Invoking Gemini Agent (call_model)...
+2026-07-21 16:37:48 | INFO     | SAP Support Agent | Gemini response generated successfully.
+2026-07-21 16:38:02 | INFO     | SAP Support Agent | Invoking Gemini Agent (call_model)...
+2026-07-21 16:38:04 | INFO     | SAP Support Agent | Gemini response generated successfully.
+2026-07-21 16:38:04 | INFO     | SAP Support Agent | Executing Tool: search_kb
+2026-07-21 16:38:04 | INFO     | SAP Support Agent | Knowledge Base Match Found: btp
+2026-07-21 16:38:04 | INFO     | SAP Support Agent | Running Issue Classification Node...
+2026-07-21 16:38:04 | INFO     | SAP Support Agent | Classification resolved: SAP HANA Cloud
+2026-07-21 16:38:04 | INFO     | SAP Support Agent | Running Priority Assignment Node...
+2026-07-21 16:38:05 | INFO     | SAP Support Agent | Priority assigned: Low
+2026-07-21 16:38:05 | INFO     | SAP Support Agent | Running Draft Response Node...
+2026-07-21 16:38:08 | INFO     | SAP Support Agent | Draft response generated.
+2026-07-21 16:38:08 | INFO     | SAP Support Agent | Running Human Review Node (Checkpoint)...
+2026-07-21 16:38:08 | INFO     | SAP Support Agent | Human review checkpoint status: Approved
+2026-07-21 16:38:08 | INFO     | SAP Support Agent | Running Final Response Node...
+2026-07-21 16:38:10 | INFO     | SAP Support Agent | Final response formatting completed.
+2026-07-21 16:38:24 | INFO     | SAP Support Agent | Invoking Gemini Agent (call_model)...
+2026-07-21 16:38:25 | INFO     | SAP Support Agent | Gemini response generated successfully.
+2026-07-21 16:38:25 | INFO     | SAP Support Agent | Executing Tool: create_support_ticket
+2026-07-21 16:38:25 | INFO     | SAP Support Agent | Support Ticket Created | SAP-98441295 | High
+2026-07-21 16:38:25 | INFO     | SAP Support Agent | Issue Summary: Authentication failure in SAP Integration Suite (CPI)
+2026-07-21 16:38:25 | INFO     | SAP Support Agent | Running Issue Classification Node...
+2026-07-21 16:38:26 | INFO     | SAP Support Agent | Classification resolved: SAP HANA Cloud
+2026-07-21 16:38:26 | INFO     | SAP Support Agent | Running Priority Assignment Node...
+2026-07-21 16:38:27 | INFO     | SAP Support Agent | Priority assigned: Low
+2026-07-21 16:38:27 | INFO     | SAP Support Agent | Running Draft Response Node...
+2026-07-21 16:38:29 | INFO     | SAP Support Agent | Draft response generated.
+2026-07-21 16:38:29 | INFO     | SAP Support Agent | Running Human Review Node (Checkpoint)...
+2026-07-21 16:38:29 | INFO     | SAP Support Agent | Human review checkpoint status: Approved
+2026-07-21 16:38:29 | INFO     | SAP Support Agent | Running Final Response Node...
+2026-07-21 16:38:31 | INFO     | SAP Support Agent | Final response formatting completed.
+2026-07-21 16:39:13 | INFO     | SAP Support Agent | Invoking Gemini Agent (call_model)...
+2026-07-21 16:39:14 | INFO     | SAP Support Agent | Gemini response generated successfully.
+2026-07-21 16:39:14 | INFO     | SAP Support Agent | Executing Tool: check_system_status
+2026-07-21 16:39:14 | INFO     | SAP Support Agent | System Status Requested | SAP HANA Cloud | Operational
+2026-07-21 16:39:14 | INFO     | SAP Support Agent | Running Issue Classification Node...
+2026-07-21 16:39:15 | INFO     | SAP Support Agent | Classification resolved: SAP HANA Cloud
+2026-07-21 16:39:15 | INFO     | SAP Support Agent | Running Priority Assignment Node...
+2026-07-21 16:39:16 | INFO     | SAP Support Agent | Priority assigned: Low
+2026-07-21 16:39:16 | INFO     | SAP Support Agent | Running Draft Response Node...
+2026-07-21 16:39:18 | INFO     | SAP Support Agent | Draft response generated.
+2026-07-21 16:39:18 | INFO     | SAP Support Agent | Running Human Review Node (Checkpoint)...
+2026-07-21 16:39:18 | INFO     | SAP Support Agent | Human review checkpoint status: Approved
+2026-07-21 16:39:18 | INFO     | SAP Support Agent | Running Final Response Node...
+2026-07-21 16:39:20 | INFO     | SAP Support Agent | Final response formatting completed.
+2026-07-21 16:39:31 | INFO     | SAP Support Agent | Invoking Gemini Agent (call_model)...
+2026-07-21 16:39:32 | INFO     | SAP Support Agent | Gemini response generated successfully.
+2026-07-21 16:39:32 | INFO     | SAP Support Agent | Executing Tool: check_system_status
+2026-07-21 16:39:32 | INFO     | SAP Support Agent | System Status Requested | SAP S/4HANA Production | Unknown
+2026-07-21 16:39:32 | INFO     | SAP Support Agent | Running Issue Classification Node...
+2026-07-21 16:39:33 | INFO     | SAP Support Agent | Classification resolved: SAP HANA Cloud
+2026-07-21 16:39:33 | INFO     | SAP Support Agent | Running Priority Assignment Node...
+2026-07-21 16:39:34 | INFO     | SAP Support Agent | Priority assigned: Low
+2026-07-21 16:39:34 | INFO     | SAP Support Agent | Running Draft Response Node...
+2026-07-21 16:39:36 | INFO     | SAP Support Agent | Draft response generated.
+2026-07-21 16:39:36 | INFO     | SAP Support Agent | Running Human Review Node (Checkpoint)...
+2026-07-21 16:39:36 | INFO     | SAP Support Agent | Human review checkpoint status: Approved
+2026-07-21 16:39:36 | INFO     | SAP Support Agent | Running Final Response Node...
+2026-07-21 16:39:38 | INFO     | SAP Support Agent | Final response formatting completed.
+2026-07-21 16:39:47 | INFO     | SAP Support Agent | Invoking Gemini Agent (call_model)...
+2026-07-21 16:39:48 | INFO     | SAP Support Agent | Gemini response generated successfully.
+2026-07-21 16:39:48 | INFO     | SAP Support Agent | Executing Tool: search_kb
+2026-07-21 16:39:48 | INFO     | SAP Support Agent | Knowledge Base Match Not Found
+2026-07-21 16:39:48 | INFO     | SAP Support Agent | Running Issue Classification Node...
+2026-07-21 16:39:49 | INFO     | SAP Support Agent | Classification resolved: SAP HANA Cloud
+2026-07-21 16:39:49 | INFO     | SAP Support Agent | Running Priority Assignment Node...
+2026-07-21 16:39:50 | INFO     | SAP Support Agent | Priority assigned: Low
+2026-07-21 16:39:50 | INFO     | SAP Support Agent | Running Draft Response Node...
+2026-07-21 16:39:52 | INFO     | SAP Support Agent | Draft response generated.
+2026-07-21 16:39:52 | INFO     | SAP Support Agent | Running Human Review Node (Checkpoint)...
+2026-07-21 16:39:52 | INFO     | SAP Support Agent | Human review checkpoint status: Approved
+2026-07-21 16:39:52 | INFO     | SAP Support Agent | Running Final Response Node...
+2026-07-21 16:39:54 | INFO     | SAP Support Agent | Final response formatting completed.
+2026-07-21 16:41:56 | INFO     | SAP Support Agent | Session ended: 37b58de3-4f10-410f-8e2e-7d57d7266b7a
