@@ -1,0 +1,10 @@
+IT Support Policy
+
+Password Reset:
+Employees can reset passwords using the company IT portal.
+
+Laptop Issue:
+Employees should raise a ticket for hardware problems.
+
+VPN Access:
+VPN access requires manager approval.
