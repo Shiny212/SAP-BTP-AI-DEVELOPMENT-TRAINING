@@ -1,0 +1,93 @@
+Job Title: SAP ABAP Developer
+
+Company: Enterprise SAP Solutions Pvt. Ltd.
+
+Location: Chennai, India
+
+Experience:
+0–2 Years
+
+Employment Type:
+Full-Time
+
+------------------------------------------------------------
+JOB SUMMARY
+------------------------------------------------------------
+
+We are seeking a motivated SAP ABAP Developer to design, develop, test, and
+maintain SAP applications. The ideal candidate should have knowledge of ABAP
+programming, SAP S/4HANA concepts, database programming, and integration with
+SAP Business Technology Platform.
+
+------------------------------------------------------------
+RESPONSIBILITIES
+------------------------------------------------------------
+
+- Develop and maintain SAP ABAP programs.
+- Create Reports, Module Pool Programs, Smart Forms, and Adobe Forms.
+- Develop enhancements using User Exits, BAdIs, and Enhancement Framework.
+- Build interfaces using BAPI, RFC, IDoc, and OData services.
+- Write optimized SQL queries and database procedures.
+- Work with SAP HANA database.
+- Debug and optimize existing ABAP programs.
+- Collaborate with functional consultants and business users.
+- Participate in testing, deployment, and production support.
+- Follow Agile software development practices.
+
+------------------------------------------------------------
+REQUIRED SKILLS
+------------------------------------------------------------
+
+Programming
+- ABAP
+- SQL
+
+SAP Technologies
+- SAP S/4HANA
+- SAP HANA
+- SAP BTP
+
+Development
+- Reports
+- ALV Reports
+- Module Pool Programming
+- Smart Forms
+- Adobe Forms
+- OData
+- CDS Views
+- AMDP
+- BAPI
+- RFC
+- IDoc
+
+Tools
+- Eclipse ADT
+- SAP GUI
+- Git
+
+Soft Skills
+- Problem Solving
+- Analytical Thinking
+- Communication
+- Teamwork
+
+------------------------------------------------------------
+PREFERRED SKILLS
+------------------------------------------------------------
+
+- Python
+- REST API
+- Fiori
+- SAPUI5
+- JavaScript
+- HTML
+- CSS
+
+------------------------------------------------------------
+EDUCATION
+------------------------------------------------------------
+
+Bachelor's Degree in Computer Science,
+Information Technology,
+Electronics,
+or a related engineering discipline.

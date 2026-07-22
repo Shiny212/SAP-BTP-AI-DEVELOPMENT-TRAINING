@@ -1,0 +1,201 @@
+{
+    "SAP BTP": [
+        "SAP Business Technology Platform",
+        "BTP",
+        "Business Technology Platform",
+        "SAP BTP Platform"
+    ],
+
+    "SAP HANA Cloud": [
+        "SAP HANA",
+        "HANA Cloud",
+        "HANA Database",
+        "SAP HANA Database"
+    ],
+
+    "SAP CAP": [
+        "CAP",
+        "Cloud Application Programming Model",
+        "CAP Framework"
+    ],
+
+    "SAP UI5": [
+        "SAPUI5",
+        "UI5",
+        "OpenUI5"
+    ],
+
+    "ABAP": [
+        "Advanced Business Application Programming",
+        "ABAP Development",
+        "ABAP Cloud"
+    ],
+
+    "SAP Fiori": [
+        "Fiori",
+        "Fiori Apps"
+    ],
+
+    "SAP AI Core": [
+        "AI Core",
+        "SAP AI"
+    ],
+
+    "SAP AI Launchpad": [
+        "AI Launchpad"
+    ],
+
+    "SAP Generative AI Hub": [
+        "Generative AI Hub",
+        "SAP GenAI Hub"
+    ],
+
+    "SAP Joule": [
+        "Joule",
+        "SAP Joule"
+    ],
+
+
+    "Generative AI": [
+        "GenAI",
+        "Generative Artificial Intelligence",
+        "LLM",
+        "Large Language Models"
+    ],
+
+
+    "Agentic AI": [
+        "AI Agents",
+        "Autonomous Agents",
+        "Agent Based AI"
+    ],
+
+
+    "RAG": [
+        "rag",
+        "Retrieval Augmented Generation",
+        "Retrieval-Augmented Generation",
+        "Retrieval Augmented Generation System"
+    ],
+
+
+    "GraphRAG": [
+        "Graph RAG",
+        "Graph Retrieval Augmented Generation"
+    ],
+
+
+    "LangChain": [
+        "Lang Chain",
+        "Langchain Framework"
+    ],
+
+
+    "LangGraph": [
+        "Lang Graph",
+        "Langgraph Framework"
+    ],
+
+
+    "Prompt Engineering": [
+        "Prompt Design",
+        "Prompt Optimization",
+        "Prompting"
+    ],
+
+
+    "Embeddings": [
+        "Embedding Models",
+        "Text Embeddings",
+        "Vector Embeddings"
+    ],
+
+
+    "Vector Database": [
+        "Vector DB",
+        "Vector Store",
+        "Vector Databases"
+    ],
+
+
+    "Gemini API": [
+        "Gemini",
+        "Google Gemini",
+        "Gemini API",
+        "Google Generative AI"
+    ],
+
+
+    "Python": [
+        "Python3",
+        "Python Programming",
+        "Python Language"
+    ],
+
+
+    "SQL": [
+        "Structured Query Language",
+        "SQL Database"
+    ],
+
+
+    "Git": [
+        "GitHub",
+        "Version Control",
+        "Git Repository"
+    ],
+
+
+    "Docker": [
+        "Containerization",
+        "Docker Container"
+    ],
+
+
+    "Kubernetes": [
+        "K8s",
+        "Container Orchestration"
+    ],
+
+
+    "TensorFlow": [
+        "Tensor Flow",
+        "TF"
+    ],
+
+
+    "Scikit-Learn": [
+        "sklearn",
+        "Scikit Learn"
+    ],
+
+
+    "Machine Learning": [
+        "ML",
+        "Machine Learning Algorithms"
+    ],
+
+
+    "Deep Learning": [
+        "DL",
+        "Neural Networks"
+    ],
+
+
+    "Streamlit": [
+        "Streamlit Framework"
+    ],
+
+
+    "FastAPI": [
+        "Fast API",
+        "REST API Framework"
+    ],
+
+
+    "REST API": [
+        "REST",
+        "RESTful API",
+        "API Services"
+    ]
+}

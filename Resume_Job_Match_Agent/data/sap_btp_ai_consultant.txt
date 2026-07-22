@@ -1,0 +1,86 @@
+Job Title: SAP BTP AI Consultant
+
+Company: ABC Technologies Pvt. Ltd.
+
+Location: Bangalore, India
+
+Experience:
+0–2 Years
+
+Employment Type:
+Full-Time
+
+------------------------------------------------------------
+JOB SUMMARY
+------------------------------------------------------------
+
+We are looking for a motivated SAP BTP AI Consultant to design and develop
+AI-powered business solutions using SAP Business Technology Platform.
+The ideal candidate should have a strong understanding of Generative AI,
+Python programming, SAP BTP services, LangChain, LangGraph, and cloud-based
+application development.
+
+------------------------------------------------------------
+RESPONSIBILITIES
+------------------------------------------------------------
+
+- Develop AI-powered enterprise applications.
+- Build Generative AI solutions using Gemini or OpenAI models.
+- Design Retrieval-Augmented Generation (RAG) pipelines.
+- Develop intelligent AI Agents using LangGraph.
+- Integrate SAP HANA Cloud with AI applications.
+- Create REST APIs using Python.
+- Work with vector databases and embeddings.
+- Perform prompt engineering for enterprise AI applications.
+- Collaborate with functional and technical teams.
+- Participate in Agile software development.
+
+------------------------------------------------------------
+REQUIRED SKILLS
+------------------------------------------------------------
+
+Programming
+- Python
+- SQL
+
+SAP Technologies
+- SAP BTP
+- SAP HANA Cloud
+
+Generative AI
+- LangChain
+- LangGraph
+- Prompt Engineering
+- RAG
+- Embeddings
+- Vector Database
+- Gemini API
+
+Machine Learning
+- TensorFlow
+- Scikit-Learn
+
+Cloud
+- REST API
+- Git
+- GitHub
+
+------------------------------------------------------------
+PREFERRED SKILLS
+------------------------------------------------------------
+
+- Docker
+- Kubernetes
+- FastAPI
+- CI/CD
+- Linux
+- Problem Solving
+- Communication Skills
+
+------------------------------------------------------------
+EDUCATION
+------------------------------------------------------------
+
+Bachelor's Degree in Computer Science,
+Information Technology,
+or related field.

@@ -1,0 +1,92 @@
+Job Title: Data Engineer
+
+Company: XYZ Data Solutions Pvt. Ltd.
+
+Location: Hyderabad, India
+
+Experience:
+0–2 Years
+
+Employment Type:
+Full-Time
+
+------------------------------------------------------------
+JOB SUMMARY
+------------------------------------------------------------
+
+We are looking for an enthusiastic Data Engineer to build, maintain, and optimize
+data pipelines that support analytics, reporting, and machine learning workloads.
+The ideal candidate should have strong programming skills, database knowledge,
+cloud fundamentals, and an understanding of modern data engineering tools.
+
+------------------------------------------------------------
+RESPONSIBILITIES
+------------------------------------------------------------
+
+- Design and develop scalable data pipelines.
+- Build ETL/ELT workflows for structured and unstructured data.
+- Write efficient SQL queries for data extraction and transformation.
+- Integrate data from multiple sources.
+- Perform data cleaning, preprocessing, and validation.
+- Work with cloud-based data platforms.
+- Support machine learning teams by preparing datasets.
+- Monitor and optimize database performance.
+- Collaborate with software developers, analysts, and data scientists.
+- Follow Agile software development practices.
+
+------------------------------------------------------------
+REQUIRED SKILLS
+------------------------------------------------------------
+
+Programming
+- Python
+- SQL
+
+Databases
+- MySQL
+- PostgreSQL
+- SQLite
+
+Data Engineering
+- ETL
+- Data Pipelines
+- Data Warehousing
+- Data Modeling
+- Data Cleaning
+
+Cloud
+- AWS
+- Azure
+- Google Cloud Platform
+
+Machine Learning
+- Pandas
+- NumPy
+- Scikit-Learn
+
+Version Control
+- Git
+- GitHub
+
+------------------------------------------------------------
+PREFERRED SKILLS
+------------------------------------------------------------
+
+- Apache Spark
+- Hadoop
+- Kafka
+- Airflow
+- Docker
+- Linux
+- REST API
+- Problem Solving
+- Communication Skills
+
+------------------------------------------------------------
+EDUCATION
+------------------------------------------------------------
+
+Bachelor's Degree in Computer Science,
+Information Technology,
+Data Science,
+or a related field.

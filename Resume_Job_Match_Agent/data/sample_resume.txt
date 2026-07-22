@@ -1,0 +1,108 @@
+SHINY BELSIYA R
+
+Email: shinybelsiya@example.com
+Phone: +91-9844301468
+Location: Tamil Nadu, India
+
+------------------------------------------------------------
+PROFESSIONAL SUMMARY
+------------------------------------------------------------
+
+Recent Computer Science and Engineering graduate with hands-on experience in
+Artificial Intelligence, Machine Learning, Generative AI, Python, SQL,
+SAP BTP AI Development, LangChain, LangGraph, TensorFlow and Data Analytics.
+
+Strong knowledge of Retrieval-Augmented Generation (RAG), Large Language Models,
+Vector Databases, Prompt Engineering, AI Agents and Cloud Technologies.
+Passionate about developing intelligent AI-powered applications and solving
+real-world business problems.
+
+------------------------------------------------------------
+EDUCATION
+------------------------------------------------------------
+
+Bachelor of Engineering
+Computer Science and Engineering
+
+CGPA: 7.99
+
+------------------------------------------------------------
+TECHNICAL SKILLS
+------------------------------------------------------------
+
+Programming Languages
+- Python
+- SQL
+- Java
+
+Artificial Intelligence
+- Machine Learning
+- Deep Learning
+- TensorFlow
+- Scikit-Learn
+- LangChain
+- LangGraph
+- Generative AI
+- Prompt Engineering
+- RAG
+- Embeddings
+
+Cloud
+- SAP BTP
+- SAP HANA Cloud
+
+Database
+- SQLite
+- SAP HANA
+
+Web Technologies
+- HTML
+- CSS
+- JavaScript
+
+Version Control
+- Git
+- GitHub
+
+------------------------------------------------------------
+PROJECTS
+------------------------------------------------------------
+
+1. Resume Job Match Agent
+   - Built an AI Agent using LangGraph.
+   - Parsed resumes and job descriptions.
+   - Calculated fit score.
+   - Generated learning roadmap.
+   - Generated personalized cover letter.
+
+2. SAP Support AI Agent
+   - Built using LangGraph and Gemini.
+   - Classified incidents.
+   - Assigned priority.
+   - Generated troubleshooting recommendations.
+
+3. Course Recommendation RAG
+   - Built using LangChain.
+   - Used FAISS vector database.
+   - Retrieved relevant courses.
+   - Generated AI recommendations.
+
+------------------------------------------------------------
+CERTIFICATIONS
+------------------------------------------------------------
+
+- SAP BTP AI Development Training
+- Python Programming
+- Machine Learning
+- Data Analytics
+
+------------------------------------------------------------
+SOFT SKILLS
+------------------------------------------------------------
+
+- Problem Solving
+- Communication
+- Teamwork
+- Analytical Thinking
+- Adaptability
+- Time Management
